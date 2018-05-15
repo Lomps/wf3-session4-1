@@ -35,6 +35,13 @@ a
 	background-color: #422883;
 	border: 25px;
 	border-radius: 15px;
+	color: white;
+
+}
+.bgMve
+{
+	background-color: #957ecf;
+	color: white;
 }
 .login-clean
 {
