@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.min.css">
+		<title>Formulaire d'inscription</title>
+	</head>
+	<body>
+		<section class="container">
+			<div class="row">
+				<div class="col-12 mt-3 py-2">
+					<h1 id="title">Inscription</h1>
+				</div>				
+				<div class="col col-sm-6 mt-3 py-2" id="row1">
+					<form actrion="action_inscritpion.php" method="POST">
+						<p><input type="text" name="nom" placeholder="Nom" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="prenom" placeholder="Prénom" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="mairie" placeholder="Mairie" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="adresse" placeholder="Adresse" class="bgMve" style="padding-left: 20px"></p>						
+						<p><input type="text" name="tel" placeholder="Téléphone" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="mail" placeholder="Adresse Mail" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="mail1" placeholder="Confirmer adresse Mail" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="mdp" placeholder="Mot de passe" class="bgMve" style="padding-left: 20px"></p>
+						<p><input type="text" name="mdp2" placeholder="Confirmer mot de passe" class="bgMve" style="padding-left: 20px"></p>
+						<button type="submit" class="bgVlt" style="margin-left: 75px;">Valider</button>
+					</form>
+				</div>
+				<div class="col-12- col-lg-3 mt-4">
+                    <div class="card-group">
+                        <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/images.jpg">
+                            <div class="card-body"></div>
+                        </div>
+                    </div>
+                </div>				 
+			</div>
+		</section>
+	</body>
+</html>
