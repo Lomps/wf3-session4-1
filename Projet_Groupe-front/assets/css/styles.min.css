@@ -17,6 +17,10 @@ a
 {
 	color: rgba(255, 255, 255, 0.9)!important;	
 }
+
+.forgot{
+	color: grey !important;
+}
 #row1
 {
 	background-color: white;

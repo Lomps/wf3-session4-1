@@ -16,7 +16,7 @@
 	<div>
 		<nav class="navbar navbar-light navbar-expand-md navigation-clean">
 			<div class="container">
-				<a class="navbar-brand" href="inex.html">Communication Auxerroise</a>
+				<a class="navbar-brand" href="index.html">Communication Auxerroise</a>
 				<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="navbar-toggler-icon"></span>
@@ -25,24 +25,50 @@
 				class="collapse navbar-collapse" id="navcol-1">
 				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="#register" >Inscription<span class="sr-only">(current)</span>
+						<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="#register" >Connexion<span class="sr-only">(current)</span>
+						</a> 
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter1" href="#register" >Inscription<span class="sr-only">(current)</span>
 						</a> 
 					</li>
 				</ul>
 			</div>
-		</nav>
-		<!-- login -->
-		<div class="login-clean col-12">
-			<form method="post">
-				<h2 class="sr-only">Login Form</h2>
-				<div class="illustration"><img src="assets/img/images.jpg"></div>
-				<div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-				<div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-				<div class="form-group"><button class="btn btn-primary btn-block" type="submit">Log In</button></div><a href="#" class="forgot">Mot de passe oublié ou perdu ?</a>
-			</form>
+		</nav>		
+		<!-- modal connexion -->
+		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4>
+							<span class="glyphicon glyphicon-lock"></span> Connexion
+						</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form role="form">
+							<div class="form-group">
+								<label for="usrname"><span class="glyphicon glyphicon-user"></span>Email</label>
+								<input type="text" class="form-control" id="usrname" placeholder="Enter votre email">
+							</div>
+							<div class="form-group">
+								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Mot de passe</label>
+								<input type="text" class="form-control" id="psw" placeholder="Entrez votre mot de passe">
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" value="" checked> Se souvenir de moi</label>
+							</div>
+							<div class="form-group">						
+							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Connexion</button></div><a href="#" class="forgot">Mot de passe oublié ou perdu ?</a>	
+						</form>
+					</div>					
+				</div>
+			</div>
 		</div>
 		<!-- modal inscription -->
-		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -56,23 +82,24 @@
 					<div class="modal-body">
 						<form role="form">
 							<div class="form-group">
-								<label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Enter email">
+								<label for="usrname"><span class="glyphicon glyphicon-user"></span>Nom</label>
+								<input type="text" class="form-control" id="usrname" placeholder="Enter votre nom">
 							</div>
 							<div class="form-group">
-								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-								<input type="text" class="form-control" id="psw" placeholder="Enter password">
+								<label for="usrname"><span class="glyphicon glyphicon-user"></span>Prénom</label>
+								<input type="text" class="form-control" id="usrname" placeholder="Enter votre pénom">
 							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="" checked>Remember me</label>
+							<div class="form-group">
+								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Mot de passe</label>
+								<input type="text" class="form-control" id="psw" placeholder="Enter votre mot de passe">
 							</div>
-							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+							<div class="form-group">
+								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Confirmer le mot de passe</label>
+								<input type="text" class="form-control" id="psw" placeholder="Confirmer le mot de passe">
+							</div>							
+							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Inscription</button>
 						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
-					</div>
+					</div>					
 				</div>
 			</div>
 		</div>
