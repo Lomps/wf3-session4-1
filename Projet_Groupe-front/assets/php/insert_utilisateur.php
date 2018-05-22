@@ -1,6 +1,6 @@
 <?php 
 
-	include('assets/php/inc_bdd.php');
+	include('inc_bdd.php');
 
 	$nom = strip_tags($_POST['nom']);
 	$prenom = strip_tags($_POST['prenom']);	
