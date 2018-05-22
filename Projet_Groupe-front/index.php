@@ -43,7 +43,7 @@ require_once('includes/inc_bdd.php');?>
 						</button>
 					</div>
 					<div class="modal-body">
-						<form role="form" action="includes/action_connexion.php" method="POST">
+						<form role="form" action="assets/php/action_connexion.php" method="POST">
 							<div class="form-group">
 								<label for="usrname">Email</label>
 								<input type="mail" class="form-control" id="usrname" name="email" placeholder="Entrez votre email">
@@ -76,7 +76,7 @@ require_once('includes/inc_bdd.php');?>
 						</button>
 					</div>
 					<div class="modal-body">
-						<form role="form" action="includes/insert_utilisateur.php" method="POST">
+						<form role="form" action="assets/php/insert_utilisateur.php" method="POST">
 							<div class="form-group">
 								<label for="usrname">Nom</label>
 								<input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
