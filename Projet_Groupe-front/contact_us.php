@@ -11,12 +11,13 @@ include('includes/header.php'); ?>
                                 <h2 class="p-4 mt-3">Président : Guy Férez, maire d’Auxerre</h2>
                         </div>
                         <div class="row p-4 mt-3" id="row1">
-                                <div class="col-12 col-sm-6 ">
+                                <div class="col col-sm-6 ">
                                         <p><strong>Services administratifs</strong></p>
                                         <p>6bis pl. Maréchal Leclerc</p>
                                         <p>89000 Auxerre</p>
+                                        <img class="card-img-top w-100 d-block p2 m3" src="assets/img/images.jpg" id="logo">
                                 </div>
-                                <div class="col-12 col-sm-6">
+                                <div class="col col-sm-6">
                                         <p><strong>Services techniques</strong></p>
                                         <p>82 rue Guynemer</p>
                                         <p>89000 Auxerre</p>
@@ -35,7 +36,7 @@ include('includes/header.php'); ?>
                                 </div>
                         </div>
                         <div class="row p-4 mt-3" id="row2">
-                                <div class="col-12 col-sm-6">
+                                <div class="col col-sm-6">
                                         <p><strong>Services administratifs</strong></p>
                                         <p>6bis pl. Maréchal Leclerc</p>
                                         <p>89000 Auxerre</p>

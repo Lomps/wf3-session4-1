@@ -17,7 +17,14 @@ a
 {
 	color: rgba(255, 255, 255, 0.9)!important;	
 }
-
+h1
+{
+	font-size:1.2em;
+}
+h2
+{
+	padding-bottom: 1em;
+}
 .forgot{
 	color: grey !important;
 }
@@ -37,15 +44,50 @@ a
 .bgVlt
 {
 	background-color: #422883;
-	border: 25px;
-	border-radius: 15px;
+	border: 2em;
+	border-radius: 1em;
 	color: white;
-
+	margin-left: 7em;
 }
-.bgMve
+#info
 {
-	background-color: #957ecf;
-	color: white;
+	padding-right:2.2em;
+	padding-left:2.2em;
+}
+#adr
+{
+	padding-right:1.9em;
+	padding-left:1.9em;
+}
+#Cd
+{
+	padding-right:1em;
+	padding-left:1em;
+}
+#ville
+{
+	padding-right:2.7em;
+	padding-left:2.7em;
+}
+#mail
+{
+	padding-right:2.4em;
+	padding-left:2.4em;
+}
+#pwd
+{
+	padding-right:0.6em;
+	padding-left:0.6em;
+}
+#oubli
+{
+	margin-left: 1em;
+	margin-right: 1em;
+}
+#logo
+{
+	height: 15em;
+	width: 15em !important;
 }
 .login-clean
 {
@@ -106,30 +148,32 @@ a
 	text-align:center;
 	font-size:12px;
 	color:#6f7a85;opacity:.9;
-	text-decoration:none;
+	text-decoration:none
 }
 .login-clean form .forgot:active,.login-clean form .forgot:hover
 {
 	opacity:1;
-	text-decoration:none;
+	text-decoration:none
 }
 .mentionslegales
 {
 	background-color:#fff;
 	padding-top:15px;
 	padding-right:40.95px;
-	padding-left:40.95px;
+	padding-left:40.95px
 }
 .pmarges
 {
-	margin-bottom:0;
+	margin-bottom:0
 }
 .imgml
 {
-	margin-left:466px;
+	margin-left:15em;
 }
-.ftr{
-	margin-top: 5px;
+
+.ftr
+{
+	margin-top: 5px;	
 	text-align: center;
 	padding-left: 4em;
 	margin-right: 4em;
