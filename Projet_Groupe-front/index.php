@@ -50,14 +50,14 @@ require_once('assets/php/inc_bdd.php');?>
 									<div class="input-group-prepend">
 										<span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 									</div>
-									<input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+									<input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="email">
 								</div>	
 								<label for="psw">Mot de passe</label>
 								<div class="input-group mb-3">
 									<div class="input-group-prepend">
 										<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									</div>
-									<input type="password" class="form-control" placeholder="Entrer votre mot de passe" aria-label="Username" aria-describedby="basic-addon1">
+									<input type="password" class="form-control" placeholder="Entrer votre mot de passe" aria-label="Username" aria-describedby="basic-addon1" name="password">
 								</div>	
 								<div class="checkbox">
 									<label><input type="checkbox" value="" checked> Se souvenir de moi</label>
@@ -90,35 +90,35 @@ require_once('assets/php/inc_bdd.php');?>
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
-								<input type="text" class="form-control" placeholder="Entrer votre Nom" aria-label="Username" aria-describedby="basic-addon1">
+								<input type="text" class="form-control" placeholder="Entrer votre Nom" aria-label="Username" aria-describedby="basic-addon1" name="nom" id="nom">
 							</div>
 							<label for="usrname">Prénom</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 								</div>
-								<input type="text" class="form-control" placeholder="Entrer votre Prénom" aria-label="Username" aria-describedby="basic-addon1">
+								<input type="text" class="form-control" placeholder="Entrer votre Prénom" aria-label="Username" aria-describedby="basic-addon1" name="prenom" id="prenom">
 							</div>
 							<label for="usrmail">Email</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 								</div>
-								<input type="email" class="form-control" placeholder="Entrer votre EMail" aria-label="Username" aria-describedby="basic-addon1">
+								<input type="email" class="form-control" placeholder="Entrer votre EMail" aria-label="Username" aria-describedby="basic-addon1" name="email" name="email">
 							</div>
 							<label for="psw">Mot de passe</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 								</div>
-								<input type="password" class="form-control" placeholder="Entrer votre Mot de Passe" aria-label="Username" aria-describedby="basic-addon1">
+								<input type="password" class="form-control" placeholder="Entrer votre Mot de Passe" aria-label="Username" aria-describedby="basic-addon1" name="password">
 							</div>
 							<label for="psw">Confirmez votre mot de passe</label>
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 								</div>
-								<input type="password" class="form-control" placeholder="Confirmez votre Mot de Passe" aria-label="Username" aria-describedby="basic-addon1">
+								<input type="password" class="form-control" placeholder="Confirmez votre Mot de Passe" aria-label="Username" aria-describedby="basic-addon1" name="password_bis">
 							</div>
 							<p>Sélectionnez votre ville</p>
 							<!-- mettre en forme selon le choix -->
