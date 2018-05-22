@@ -3,15 +3,15 @@
 	include('inc_bdd.php');
 
 	$nom = strip_tags($_POST['nom']);
-	$prenom = strip_tags($_POST['prenom']);
-	$mairie = strip_tags($_POST['mairie']);
+	$prenom = strip_tags($_POST['prenom']);	
 	$email = strip_tags($_POST['email']);
-	$mot_de_passe = strip_tags($_POST['mot_de_passe']);
-	$mot_de_passe_bis = strip_tags($_POST['mot_de_passe_bis']);
+	$password = strip_tags($_POST['password']);
+	$password_bis = strip_tags($_POST['password_bis']);
+	$mairie = strip_tags($_POST['mairie']);
 
 	// vérifier si les champs sont remplis
 
-	if( !empty($nom) AND !empty($prenom) AND !empty($mairie) AND !empty($email) AND !empty($mot_de_passe) AND !empty($mot_de_passe_bis))
+	if( !empty($nom) AND !empty($prenom) AND !empty($mairie) AND !empty($email) AND !empty($password) AND !empty($password_bis))
 	{
 		// * vérifier si l'email existe déja
 
@@ -26,22 +26,22 @@
 		{
 			// pas de mail dans la BDD
 			// vérifier mots de passe identiques
-			if($mot_de_passe == $mot_de_passe_bis)
+			if($password == $password_bis)
 			{
 				// mots de passe identiques
 
 				// * requête pour l'insertion du nouvel utilisateur
 
 
-				$sql = "INSERT INTO utilisateur(nom, prenom, email, mairie_idmairie, mot_de_passe, ) VALUES (:nom, :prenom, :email, :idmairie :mot_de_passe);";
+				$sql = "INSERT INTO utilisateur(nom, prenom, email, password, mairie_idmairie ) VALUES (:nom, :prenom, :email, :password, :idmairie);";
 
-				$mot_de_passe = sha1($mot_de_passe);
+				$password = sha1($password);
 
 				$query = $db -> prepare($sql);
 				$query -> bindValue(':nom', $nom, PDO::PARAM_STR);
 				$query -> bindValue(':prenom', $prenom, PDO::PARAM_STR);
-				$query -> bindValue(':email', $mail, PDO::PARAM_STR);
-				$query -> bindValue(':mot_de_passe', $mot_de_passe, PDO::PARAM_STR);
+				$query -> bindValue(':email', $email, PDO::PARAM_STR);
+				$query -> bindValue(':password', $password, PDO::PARAM_STR);
 				$query -> bindValue(':idmairie', $mairie, PDO::PARAM_INT);
 				$query -> execute();
 

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <!-- head -->
-<?php include('includes/head.php'); ?>
+<?php include('includes/head.php'); 
+require_once('includes/inc_bdd.php');?>
 
 <body>
 	<header>
@@ -42,7 +43,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form role="form">
+						<form role="form" >
 							<div class="form-group">
 								<label for="usrname">Email</label>
 								<input type="text" class="form-control" id="usrname" placeholder="Entrez votre email">
@@ -75,27 +76,44 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form role="form">
+						<form role="form" action="includes/insert_utilisateur.php" method="POST">
 							<div class="form-group">
 								<label for="usrname">Nom</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez votre nom">
+								<input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
 							</div>
 							<div class="form-group">
 								<label for="usrname">Prénom</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez votre pénom">
+								<input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+							</div>
+							<div class="form-group">
+								<label for="usrmail">Email</label>
+								<input type="mail" class="form-control" id="email" name="email" placeholder="Entrez votre email">
 							</div>
 							<div class="form-group">
 								<label for="psw">Mot de passe</label>
-								<input type="text" class="form-control" id="psw" placeholder="Entrez votre mot de passe">
+								<input type="text" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe">
 							</div>
 							<div class="form-group">
 								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Confirmer le mot de passe</label>
-								<input type="text" class="form-control" id="psw" placeholder="Confirmer le mot de passe">
+								<input type="text" class="form-control" id="password_bis" name="password_bis" placeholder="Confirmer le mot de passe">
 							</div>
+
 							<p>Sélectionnez votre ville</p>
 							<!-- mettre en forme selon le choix -->
-							<select class="form-control">
+							<select class="form-control" name="mairie">
 								<option>Sélectionnez ville</option>
+								<?php
+
+								$sql = "SELECT id_mairie, ville FROM mairie";
+								$query = $db -> query($sql);
+								while($result = $query -> fetch())
+								{
+									?>
+									<option value="<?= $result['id_mairie']; ?>"><?= $result['ville']; ?></option>
+									<?php
+								} 
+
+								?>
 							</select>
 							<div><p></p></div>
 							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Inscription</button>
