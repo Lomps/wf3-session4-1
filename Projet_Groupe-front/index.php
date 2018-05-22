@@ -2,7 +2,7 @@
 <html>
 <!-- head -->
 <?php include('includes/head.php'); 
-require_once('includes/inc_bdd.php');?>
+require_once('assets/php/inc_bdd.php');?>
 
 <body>
 	<header>
