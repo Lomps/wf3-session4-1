@@ -6,7 +6,7 @@
           <li class="nav-item" role="presentation"><a class="nav-link active" href="mon_profil.php">Mon profil</a></li>
           <li class="nav-item" role="presentation"><a class="nav-link" href="#">Mes articles</a></li>
           <li class="nav-item" role="presentation"><a class="nav-link" href="choix_template.php">Créer un article</a></li>
-          <li class="nav-item" role="presentation"><a class="nav-link" href="#">Déconnexion</a></li>
+          <li class="nav-item" role="presentation"><a class="nav-link" href="assets/php/deconnexion.php">Déconnexion</a></li>
         </ul>
       </div>
     </div>

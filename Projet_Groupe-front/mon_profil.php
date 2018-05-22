@@ -3,7 +3,7 @@
 <?php
 include('includes/head.php');
 include('includes/header.php');
-require_once('includes/inc_bdd.php');
+require_once('assets/php/inc_bdd.php');
 ?>
 
 <body>
