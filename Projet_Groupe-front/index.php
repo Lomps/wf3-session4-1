@@ -50,7 +50,7 @@ require_once('assets/php/inc_bdd.php');?>
 							</div>
 							<div class="form-group">
 								<label for="psw">Mot de passe</label>
-								<input type="text" class="form-control" id="psw" name="password" placeholder="Entrez votre mot de passe">
+								<input type="password" class="form-control" id="psw" name="password" placeholder="Entrez votre mot de passe">
 							</div>
 							<div class="checkbox">
 								<label><input type="checkbox" value="" checked> Se souvenir de moi</label>
@@ -87,15 +87,15 @@ require_once('assets/php/inc_bdd.php');?>
 							</div>
 							<div class="form-group">
 								<label for="usrmail">Email</label>
-								<input type="mail" class="form-control" id="email" name="email" placeholder="Entrez votre email">
+								<input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre email">
 							</div>
 							<div class="form-group">
 								<label for="psw">Mot de passe</label>
-								<input type="text" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe">
 							</div>
 							<div class="form-group">
 								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Confirmer le mot de passe</label>
-								<input type="text" class="form-control" id="password_bis" name="password_bis" placeholder="Confirmer le mot de passe">
+								<input type="password" class="form-control" id="password_bis" name="password_bis" placeholder="Confirmer le mot de passe">
 							</div>
 
 							<p>Sélectionnez votre ville</p>
