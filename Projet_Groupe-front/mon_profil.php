@@ -20,29 +20,22 @@ require_once('includes/inc_bdd.php');
                 <div class="col col-sm-6 mt-4">
                     <h2>Modifier mes informations</h2>
                     <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="info">Mairie</span></div><input class="form-control" type="text">
-                        <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
+                        <div class="input-group-prepend"><span class="input-group-text" id="info">Nom</span></div><input class="form-control" type="text" name="nom">
+                        
                     </div>
                     <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="adr">Adresse</span></div><input class="form-control" type="text">
-                        <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
+                        <div class="input-group-prepend"><span class="input-group-text" id="adr">Prénom</span></div><input class="form-control" type="text" name="prenon">
+                        
                     </div>
                     <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="Cd">Code postal</span></div><input class="form-control" type="text">
-                        <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
+                        <div class="input-group-prepend"><span class="input-group-text" id="Cd">Email</span></div><input class="form-control" type="email" name="email">
+                        
                     </div>
                     <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="ville">Ville</span></div><input class="form-control" type="text">
-                        <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
+                        <div class="input-group-prepend"><span class="input-group-text" id="password">Mot de passe</span></div><input class="form-control" type="password">                        
                     </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="mail">Email</span></div><input class="form-control" type="text">
-                        <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend"><span class="input-group-text" id="pwd">Mot de passe</span></div><input class="form-control" type="text">
-                        <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
-                    </div>
+                    <div><p></p></div>
+                    <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
                 </div>
             </div>
         </div>
