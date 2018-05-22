@@ -9,7 +9,7 @@ require_once('includes/inc_bdd.php');?>
 		<!-- navbar -->
 		<nav class="navbar navbar-light navbar-expand-md navigation-clean">
 			<div class="container">
-				<a class="navbar-brand" href="index.html"><h1>Communication Auxerroise</h1></a>
+				<a class="navbar-brand" href="index.php"><h1>Communication Auxerroise</h1></a>
 				<button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="navbar-toggler-icon"></span>
@@ -17,12 +17,12 @@ require_once('includes/inc_bdd.php');?>
 				<div class="collapse navbar-collapse" id="navcol-1">
 					<ul class="nav navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="#register">
+							<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter" href="#connexion">
 								Connexion<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter1" href="#register">
+							<a class="nav-link" data-toggle="modal" data-target="#exampleModalCenter1" href="#inscription">
 								Inscription<span class="sr-only">(current)</span>
 							</a>
 						</li>
