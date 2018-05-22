@@ -92,49 +92,12 @@
 								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Confirmer le mot de passe</label>
 								<input type="text" class="form-control" id="psw" placeholder="Confirmer le mot de passe">
 							</div>
-							<p>Votre ville est elle inscrite ?</p>
+							<p>Sélectionnez votre ville</p>
 							<!-- mettre en forme selon le choix -->
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-								<label class="form-check-label" for="exampleRadios1">
-									Oui
-								</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-								<label class="form-check-label" for="exampleRadios2">
-									Non
-								</label>
-							</div>
-							<!-- si oui select ville par bdd -->
 							<select class="form-control">
 								<option>Sélectionnez ville</option>
 							</select>
-							<!-- si non inscription de la ville -->
-							<div class="form-group">
-								<label for="usrname">Mairie</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez le nom de la mairie">
-							</div>
-							<div class="form-group">
-								<label for="usrname">Adresse</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez l'adresse">
-							</div>
-							<div class="form-group">
-								<label for="usrname">Code postal</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez le code postal">
-							</div>
-							<div class="form-group">
-								<label for="usrname">Ville</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez la ville">
-							</div>
-							<div class="form-group">
-								<label for="usrname">Téléphone</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez le télephone">
-							</div>
-							<div class="form-group">
-								<label for="usrname">Email mairie</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez l'email de la mairie">
-							</div>
+							<div><p></p></div>
 							<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Inscription</button>
 						</form>
 					</div>
