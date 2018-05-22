@@ -43,14 +43,14 @@ require_once('includes/inc_bdd.php');?>
 						</button>
 					</div>
 					<div class="modal-body">
-						<form role="form" >
+						<form role="form" action="includes/action_connexion.php" method="POST">
 							<div class="form-group">
 								<label for="usrname">Email</label>
-								<input type="text" class="form-control" id="usrname" placeholder="Entrez votre email">
+								<input type="mail" class="form-control" id="usrname" name="email" placeholder="Entrez votre email">
 							</div>
 							<div class="form-group">
 								<label for="psw">Mot de passe</label>
-								<input type="text" class="form-control" id="psw" placeholder="Entrez votre mot de passe">
+								<input type="text" class="form-control" id="psw" name="password" placeholder="Entrez votre mot de passe">
 							</div>
 							<div class="checkbox">
 								<label><input type="checkbox" value="" checked> Se souvenir de moi</label>
