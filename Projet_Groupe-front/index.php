@@ -45,19 +45,27 @@ require_once('assets/php/inc_bdd.php');?>
 					<div class="modal-body">
 						<form role="form" action="assets/php/action_connexion.php" method="POST">
 							<div class="form-group">
-								<label for="usrname">Email</label>
-								<input type="mail" class="form-control" id="usrname" name="email" placeholder="Entrez votre email">
-							</div>
-							<div class="form-group">
+								<label for="usrname">Email</label>				
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+									</div>
+									<input type="email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+								</div>	
 								<label for="psw">Mot de passe</label>
-								<input type="password" class="form-control" id="psw" name="password" placeholder="Entrez votre mot de passe">
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									</div>
+									<input type="password" class="form-control" placeholder="Entrer votre mot de passe" aria-label="Username" aria-describedby="basic-addon1">
+								</div>	
+								<div class="checkbox">
+									<label><input type="checkbox" value="" checked> Se souvenir de moi</label>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Connexion</button>
+								</div><a href="oublie_mdp.php" class="forgot">Mot de passe oublié ou perdu ?</a>
 							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" value="" checked> Se souvenir de moi</label>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Connexion</button>
-							</div><a href="oublie_mdp.php" class="forgot">Mot de passe oublié ou perdu ?</a>
 						</form>
 					</div>
 				</div>
@@ -77,27 +85,41 @@ require_once('assets/php/inc_bdd.php');?>
 					</div>
 					<div class="modal-body">
 						<form role="form" action="assets/php/insert_utilisateur.php" method="POST">
-							<div class="form-group">
-								<label for="usrname">Nom</label>
-								<input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom">
+							<label for="usrname">Nom</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="Entrer votre Nom" aria-label="Username" aria-describedby="basic-addon1">
 							</div>
-							<div class="form-group">
-								<label for="usrname">Prénom</label>
-								<input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+							<label for="usrname">Prénom</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="Entrer votre Prénom" aria-label="Username" aria-describedby="basic-addon1">
 							</div>
-							<div class="form-group">
-								<label for="usrmail">Email</label>
-								<input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre email">
+							<label for="usrmail">Email</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+								</div>
+								<input type="email" class="form-control" placeholder="Entrer votre EMail" aria-label="Username" aria-describedby="basic-addon1">
 							</div>
-							<div class="form-group">
-								<label for="psw">Mot de passe</label>
-								<input type="password" class="form-control" id="password" name="password" placeholder="Entrez votre mot de passe">
+							<label for="psw">Mot de passe</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+								</div>
+								<input type="password" class="form-control" placeholder="Entrer votre Mot de Passe" aria-label="Username" aria-describedby="basic-addon1">
 							</div>
-							<div class="form-group">
-								<label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Confirmer le mot de passe</label>
-								<input type="password" class="form-control" id="password_bis" name="password_bis" placeholder="Confirmer le mot de passe">
+							<label for="psw">Confirmez votre mot de passe</label>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+								</div>
+								<input type="password" class="form-control" placeholder="Confirmez votre Mot de Passe" aria-label="Username" aria-describedby="basic-addon1">
 							</div>
-
 							<p>Sélectionnez votre ville</p>
 							<!-- mettre en forme selon le choix -->
 							<select class="form-control" name="mairie">
