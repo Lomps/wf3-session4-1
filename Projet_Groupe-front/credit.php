@@ -19,7 +19,7 @@ include('includes/header.php');
                     <p>Laura Sylvestre-Baron, Chargée de communication</p>
                     <h3>Images et illustrations du site Agglomeration-auxerrois.fr</h3>
                     <p class="pmarges">Laura Déon - Polyphot</p>
-                    <p class="pmarges">Camille Luco<</p>
+                    <p class="pmarges">Camille Luco</p>
                     <p class="pmarges">Marie Curieux</p>
                     <p class="pmarges">Laura Sylvestre-Baron</p>
                     <p class="pmarges">Xavier Antoine</p>
