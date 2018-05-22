@@ -1,11 +1,13 @@
+<!DOCTYPE html>
+<html>
 <?php
-
-    include('includes/header.php');
-
+include('includes/head.php');
+include('includes/header.php');
+require_once('includes/inc_bdd.php');
 ?>
 
 <body>
-    <div class="container-fluid">
+    <main class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 mt-4">
@@ -44,11 +46,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </mail>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 <?php
-
     include('includes/footer.php');
-
 ?>
+</body>
+</html>
