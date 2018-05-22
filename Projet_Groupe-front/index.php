@@ -57,7 +57,7 @@ require_once('includes/inc_bdd.php');?>
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Connexion</button>
-							</div><a href="oubli_mdp.php" class="forgot">Mot de passe oublié ou perdu ?</a>
+							</div><a href="oublie_mdp.php" class="forgot">Mot de passe oublié ou perdu ?</a>
 						</form>
 					</div>
 				</div>
