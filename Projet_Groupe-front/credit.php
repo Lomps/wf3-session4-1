@@ -2,18 +2,12 @@
 <html>
 
     <?php 
-    include('includes/head.php');
-    include('includes/header.php'); ?>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>communautée de commune</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-</head>
+    include('includes/head.php'); ?>
+    
 
 <body>
+<?php include('includes/headerlogin.php'); ?>
+
     <main class="container-fluid mt-5 mb-5">
         <div class="container">
             <div class="row">
