@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 
+    <?php include('includes/header.php'); ?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +12,11 @@
 </head>
 
 <body>
-    <div class="container-fluid mt-5 mb-5">
+    <main class="container-fluid mt-5 mb-5">
         <div class="container">
             <div class="row">
-                <main class="col-12 mentionslegales">
-                    <h2>CREDITS<img class="img-fluid imgml" src="assets/img/images.jpg" alt="logo Communauté de l'auxerrois" style="margin-left:589px;"><br></h2>
+                <div class="col col-lg-9 mentionslegales">
+                    <h2>CREDITS</h2>
                     <p>Le site Agglomeration-auxerrois.fr est rédigé, animé et mise à jour par l'ensemble du service communication de la Communauté d'agglomération de <br>l'Auxerrois.<br></p>
                     <h3>Rédaction, gestion et animation du site Agglomeration-auxerrois.fr<br></h3>
                     <p class="pmarges">Directeur de la publication : Guy Férez, Président de la Communauté de l'Auxerrois<br></p>
@@ -35,10 +37,18 @@
                     <p class="pmarges">Sébastien Dujardin</p>
                     <p class="pmarges">Grégory Oliva</p>
                     <p>Valentin Pillon</p>
-                </main>
+                </div>
+                <div class="col col-lg-3 mt-4" >
+                    <div class="card-group">
+                        <div class="card"><img class="card-img-top w-100 d-block" src="assets/img/images.jpg">
+                            <div class="card-body"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
+    <?php include('includes/footer.php'); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
 </body>

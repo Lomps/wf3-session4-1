@@ -5,6 +5,8 @@
     <title>communautée de commune</title>
     <!-- CSS -->
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/styles.min.css">
     <!-- Javascript -->
 	<script src="assets/js/jquery-3.3.1.js"></script>
