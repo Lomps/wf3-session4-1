@@ -2,9 +2,10 @@
 <html>
 <!-- head -->
 <?php include('includes/head.php'); 
-require_once('includes/inc_bdd.php');?>
+?>
 
 <body>
+<<<<<<< HEAD
 	<header>
 		<!-- navbar -->
 		<nav class="navbar navbar-light navbar-expand-md navigation-clean">
@@ -137,6 +138,9 @@ require_once('includes/inc_bdd.php');?>
 			</div>
 		</div>
 	</header>
+=======
+	<?php include('includes/headerlogin.php'); ?>
+>>>>>>> f8a18f0ad6a065e524968e657a1b084aa8229832
 	<!-- main -->
 	<main>
 		<div class="container-fluid">

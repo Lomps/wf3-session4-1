@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,4 @@
     <!-- Javascript -->
 	<script src="assets/js/jquery-3.3.1.js"></script>
 	<script src="assets/js/bootstrap.js"></script>
-
-
 </head>

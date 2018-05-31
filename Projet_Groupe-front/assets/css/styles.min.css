@@ -47,7 +47,7 @@ h2
 	border: 2em;
 	border-radius: 1em;
 	color: white;
-
+	margin-left: 7em;
 }
 #info
 {
@@ -83,6 +83,14 @@ h2
 {
 	margin-left: 1em;
 	margin-right: 1em;
+<<<<<<< HEAD
+=======
+}
+#logo
+{
+	height: 15em;
+	width: 15em !important;
+>>>>>>> f8a18f0ad6a065e524968e657a1b084aa8229832
 }
 .login-clean
 {
@@ -163,7 +171,11 @@ h2
 }
 .imgml
 {
+<<<<<<< HEAD
 	margin-left:466px
+=======
+	margin-left:15em;
+>>>>>>> f8a18f0ad6a065e524968e657a1b084aa8229832
 }
 
 .ftr

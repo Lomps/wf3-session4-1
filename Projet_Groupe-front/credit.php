@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+<<<<<<< HEAD
     <?php include('includes/header.php'); ?>
 
 <head>
@@ -12,6 +13,15 @@
 </head>
 
 <body>
+=======
+    <?php 
+    include('includes/head.php'); ?>
+    
+
+<body>
+<?php include('includes/headerlogin.php'); ?>
+
+>>>>>>> f8a18f0ad6a065e524968e657a1b084aa8229832
     <main class="container-fluid mt-5 mb-5">
         <div class="container">
             <div class="row">

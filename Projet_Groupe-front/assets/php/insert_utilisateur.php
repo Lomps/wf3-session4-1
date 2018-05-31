@@ -45,7 +45,7 @@
 				$query -> bindValue(':idmairie', $mairie, PDO::PARAM_INT);
 				$query -> execute();
 
-				echo "Vous êtes inscrit ! Bravo !";
+				echo "Vous êtes inscrit ! Bravo ! <a href='../../accueil.php'>Aller à la page d'accueil</a>";
 			}
 			else
 			{
