@@ -22,4 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 
-Route::get('/admin/ajoutarticles', 'adminController@ajoutarticles')->middleware('auth')->name('ajoutarticles');
+
+// Route admin
+Route::get('/admin', 'adminController@admin')->middleware('auth')->name('admin');
+
+// Route  utilisateur profil
+Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
