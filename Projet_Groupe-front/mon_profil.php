@@ -37,8 +37,10 @@ $result = $query->fetch();
                     </div>
                 </div>
                 <div class="col col-sm-6 mt-4">
+                   
                     <h2>Modifier mes informations</h2>
-                    <form method="POST" action="edite_profil.php">
+                    <form method="POST" action="assets/php/edite_profil.php">
+                         <input type="hidden" name="id_utilisateur" value="<?= $id; ?>" required>
                     <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text" id="info">Nom</span></div><input class="form-control" type="text" name="nom" value="<?= $result['nom'] ?>">
                         
@@ -54,7 +56,7 @@ $result = $query->fetch();
                     <div class="input-group">
                         <div class="input-group-prepend"><span class="input-group-text" id="password">Mot de passe</span></div><input class="form-control" type="password" name="password">                        
                     </div>
-                    <div class="input-group-append"><button class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
+                    <div class="input-group-append"><button type="submit" class="btn btn-primary bgVlt" type="button">Modifier !</button></div>
                 </form>
                 </div>
             </div>
