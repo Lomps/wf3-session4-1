@@ -1,0 +1,17 @@
+/Page d'accueil (http://localhost/monblog/public)
+/login
+/profil : page du profil user
+/theme : choix du theme
+/ajoutarticle : ajout des articles
+/supprimearticle :  supprimer des articles
+/modifarticle : modifier un article
+/footer 
+/mentionlegale
+/contact
+admin/ajoutmairie
+/admin/theme
+
+------------------------------------------------------------------
+
+voir si dans /theme on met article ou on met une route article seule ?
+voir si dans /theme on met article ou on met une route articles seule pour lister tout les articles ou pas  ?
