@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
+
+         <?php include('includes/header.php'); ?>
+
         <head>
-	<meta charset="utf-8">
-	 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <meta charset="utf-8">
+         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.css">     
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/styles.min.css"> 
         <link rel="stylesheet" type="text/css" href="assets/css/styles.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
-	<title>Contacter Nous</title>
-	</head>
+        <title>Contacter Nous</title>
+        </head>
         <body>
         <main class="container-fluid">
         <section class="container">
@@ -66,5 +69,6 @@
         </div>
         </section>                
         </main>
+        <?php include('includes/footer.php'); ?>
         </body>
 </html>
