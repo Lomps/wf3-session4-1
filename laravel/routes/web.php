@@ -23,6 +23,10 @@ Route::get('/credit', function(){
 Route::get('/mentions-legales', function(){
 	return view('mentions-legales');
 });
+// Route Contactez-nous
+Route::get('/contactez-nous', function(){
+	return view('contactez-nous');
+});
 // Routes utilisateur
 Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 

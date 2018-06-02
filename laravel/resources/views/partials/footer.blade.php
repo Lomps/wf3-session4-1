@@ -14,7 +14,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{URL::to('/')}}/contact_us">Contacter Nous
+						<a class="nav-link" href="{{URL::to('/')}}/contactez-nous">Contacter Nous
 						</a>
 					</li>
 				</ul>
