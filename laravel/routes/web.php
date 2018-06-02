@@ -12,19 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
+});
+Route::get('/credit', function() {
+	return view('credit');
+});
+// Route crédits
+//Route::get('/credit', 'Controller@credit')->name('credit');
+// Routes utilisateur
+Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
+
+
+// Route Admin
+Route::prefix('admin')->group(function() {
+	Route::get('/', 'adminController@accueil')->middleware('auth')->name('admin');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
-
-
-// Route admin
-Route::get('/admin', 'adminController@admin')->middleware('auth')->name('admin');
-
-// Route  utilisateur profil
-Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
