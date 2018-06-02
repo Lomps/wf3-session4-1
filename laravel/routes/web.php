@@ -19,6 +19,10 @@ Route::get('/', function (){
 Route::get('/credit', function(){
 	return view('credit');
 });
+// Route mentions légales
+Route::get('/mentions-legales', function(){
+	return view('mentions-legales');
+});
 // Routes utilisateur
 Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 
