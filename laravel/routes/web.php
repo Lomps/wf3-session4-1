@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
+// route accueil
+Route::get('/', function (){
 	return view('welcome');
 });
-Route::get('/credit', function() {
+// Route crédits
+Route::get('/credit', function(){
 	return view('credit');
 });
-// Route crédits
-//Route::get('/credit', 'Controller@credit')->name('credit');
 // Routes utilisateur
 Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 
