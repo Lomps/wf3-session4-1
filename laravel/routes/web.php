@@ -27,13 +27,22 @@ Route::get('/mentions-legales', function(){
 Route::get('/contactez-nous', function(){
 	return view('contactez-nous');
 });
-// Routes utilisateur
+// Route profil
 Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
+// Route affiche modif profil
+Route::get('/modifier-profil', 'usersController@modifprofil')->middleware('auth')->name('modifprofil');
+// Route modif profil validation
+Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middleware('auth')->name('validemodifprofil');
+
 
 
 // Route Admin
 Route::prefix('admin')->group(function() {
+// Route accueil admin
+// 
 	Route::get('/', 'adminController@accueil')->middleware('auth')->name('admin');
+// Route liste des mairies
+	Route::get('/listemairie', 'adminController@listemairie')->middleware('auth')->name('listemairie');
 });
 
 Auth::routes();
