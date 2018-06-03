@@ -24,7 +24,7 @@
             <form method="post" action="{{route('postinscription_mairie') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row">
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="mairie">
                             Mairie
                         </label>
@@ -41,7 +41,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="adresse">
                             Adresse
                         </label>
@@ -58,7 +58,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="code_postal">
                             Code postal
                         </label>
@@ -75,7 +75,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="ville">
                             Ville
                         </label>
@@ -92,7 +92,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="telephone">
                             Téléphone
                         </label>
@@ -109,7 +109,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="email_mairie">
                             Email
                         </label>
@@ -126,7 +126,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right">
+                    <div class="col-2 mb-2 text-right">
                         <label class="form-label" for="site">
                             Site
                         </label>
@@ -143,7 +143,7 @@
                         @endif
                     </div>
 
-                    <div class="col-3 mb-2 text-right"></div>
+                    <div class="col-2 mb-2 text-right"></div>
                     <div class="col-9 mb-2">
                         <button class="btn btn-primary" type="submit">
                             Inscrire la mairie

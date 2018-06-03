@@ -65,7 +65,7 @@
 						Gestion des Mairies
 					</h5>
 					<p class="card-text">
-						{{ $mairie }} mairie enregistée(s)
+						{{ $mairie }} mairies enregistées
 					</p>
 				</div>
 				<div class="card-footer">
