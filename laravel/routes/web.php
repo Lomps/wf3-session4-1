@@ -38,11 +38,16 @@ Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middlewa
 
 // Route Admin
 Route::prefix('admin')->group(function() {
-// Route accueil admin
-// 
+// Route accueil admin 
 	Route::get('/', 'adminController@accueil')->middleware('auth')->name('admin');
 // Route liste des mairies
 	Route::get('/listemairie', 'adminController@listemairie')->middleware('auth')->name('listemairie');
+// Route admin mairie
+
+// Route Affiche inscrire une mairie
+	Route::get('/inscription_mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
+// Route ajout mairie
+	Route::post('/postinscription_mairie', 'adminController@postinscription_mairie')->middleware('auth')->name('postinscription_mairie');
 });
 
 Auth::routes();

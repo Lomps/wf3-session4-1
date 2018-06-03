@@ -79,8 +79,8 @@
 								Administrer
 							</a>
 							- 
-							<a href="#">
-								Créer une mairie
+							<a href="{{URL::to('/')}}/admin/inscription_mairie">
+								Inscrire une mairie
 							</a>
 						</small>
 					</p>
