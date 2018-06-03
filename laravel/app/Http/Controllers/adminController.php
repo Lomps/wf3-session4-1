@@ -19,12 +19,13 @@ class adminController extends Controller
 	}
 
     // Affiche la liste des mairies
-	public function listemairie(){        	
-		return view('admin.listemairie');
-		
+	public function listemairie(){ 
+		$listmairie = Mairie::get();       	
+		return view('admin.listemairie', ['listemairie' => $listmairie]);
+
 	}
 
-	
+
 
 
 }
