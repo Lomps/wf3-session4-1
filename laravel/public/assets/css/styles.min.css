@@ -1,3 +1,4 @@
+/*css de la page principal*/
 body
 {
 	margin:0;
@@ -9,18 +10,36 @@ body
 	text-align:left;
 	background-color:#957ECF
 }
+/*navbar*/
 .navbar-light .navbar-brand
 {
     color: rgba(255, 255, 255, 0.9);
 }
+.bgDark
+{
+	background-color: #372c6e !important;
+}
+/*lien dropdown dans la navbar */
+a.dropdown-item
+{
+	color: black !important;
+}
+/*couleur dans les footer des cartes*/
+div.card-footer
+{
+	color: #372c6e!important;
+}
+/*balise a*/
 a
 {
 	color: rgba(255, 255, 255, 0.9)!important;	
 }
+/*titre h1 */
 h1
 {
 	font-size:1.2em;
 }
+/*titre h2*/
 h2
 {
 	padding-bottom: 1em;
@@ -28,19 +47,23 @@ h2
 .forgot{
 	color: grey !important;
 }
+/*row 1 de la page*/
 #row1
 {
 	background-color: white;
 }
+/*row 2 de la page*/
 #row2
 {
 	background-color: white;
 }
+
 #title
 {
 	text-align: center;
 	background-color: white;
 }
+/*les bouton*/
 .bgVlt
 {
 	background-color: #422883;
@@ -64,21 +87,25 @@ h2
 	padding-right:1em;
 	padding-left:1em;
 }
+/*ville*/
 #ville
 {
 	padding-right:2.7em;
 	padding-left:2.7em;
 }
+/*mail*/
 #mail
 {
 	padding-right:2.4em;
 	padding-left:2.4em;
 }
+/*mot de passe*/
 #pwd
 {
 	padding-right:0.6em;
 	padding-left:0.6em;
 }
+/* oubli de mot de passe*/
 #oubli
 {
 	margin-left: 1em;
@@ -155,6 +182,7 @@ h2
 	opacity:1;
 	text-decoration:none
 }
+/*mentions legales*/
 .mentionslegales
 {
 	background-color:#fff;
@@ -171,6 +199,7 @@ h2
 	margin-left:15em;
 }
 
+/*footer*/
 .ftr
 {
 	margin-top: 5px;	
