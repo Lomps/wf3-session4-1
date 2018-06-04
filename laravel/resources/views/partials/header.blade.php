@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles.min.css') }}">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbardark  bgDark">
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
 		<section class="container">
 			{{-- lien sur logo --}}
 			<a class="navbar-brand" href="{{ URL::to('/') }}">
@@ -28,7 +28,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					{{-- lien Accueil --}}
-					<li class="nav-item{{ (Route::currentRouteName() == 'accueil') ? ' active': '' }}">
+					<li class="nav-item active">
 						<a class="nav-link" href="{{URL::to('/')}}">
 							{{ __('Home')}}
 							<span class="sr-only">(current)</span>
