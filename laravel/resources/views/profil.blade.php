@@ -21,7 +21,7 @@
 				E-Mail : {{ Auth::user()->email }}
 			</p>
 			<p>
-				Ma mairie :
+				Ma mairie : {{$mairie->mairie}}
 			</p>
 			<a href="{{route('modifprofil')}}" type="button" class="btn btn-primary">
 				Modifier mon profil
