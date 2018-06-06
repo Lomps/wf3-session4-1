@@ -52,6 +52,10 @@ Route::prefix('admin')->group(function() {
 });
 // fin de route admin
 
+// Route articles
+//  a décommenter quand la page sera prete sinon les messages d'erreur apparaitrons
+	//Route::get('/article','articleControleur@article')->middlware('auth')->name('article');
+
 Auth::routes();
 
 Route::get('/register', 'afficheinscmairieController@affichemaire')->name('register');
