@@ -48,6 +48,8 @@ Route::prefix('admin')->group(function() {
 	Route::get('/inscription_mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
 // Route ajout mairie
 	Route::post('/postinscription_mairie', 'adminController@postinscription_mairie')->middleware('auth')->name('postinscription_mairie');
+
+	Route::get('/article', 'usersController@article')->middleware('auth')->name('article');
 });
 
 Auth::routes();
