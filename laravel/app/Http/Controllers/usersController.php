@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\mairieModel as Mairie;
+use App\articleModel as article;
 use Auth;
 class usersController extends Controller
 {
