@@ -18,9 +18,23 @@
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('Firstname') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="firstname" type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" value="{{ old('firstname') }}" required autofocus>
+
+                                @if ($errors->has('firstname'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('firstname') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -32,9 +46,9 @@
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -46,9 +60,9 @@
                                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -58,6 +72,23 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="mairie" class="col-md-4 col-form-label text-md-right">Example select</label>
+                            <div class="col-md-6">
+                                <select class="form-control {{ $errors->has('mairie') ? ' is-invalid' : '' }}" name="mairie" id="mairie">
+                                    <option selected="">Selectionnez votre ville</option>
+                                    @foreach($affichemaire as $mairie)
+                                    <option value="{{$mairie->id_mairie}}">{{ $mairie->mairie }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('mairie'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('mairie') }}</strong>
+                                </span>
+                                @endif
                             </div>
                         </div>
 
