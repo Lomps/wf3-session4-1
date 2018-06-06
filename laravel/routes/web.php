@@ -30,7 +30,7 @@ Route::get('/contactez-nous', function(){
 // Route profil
 Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 // Route affiche modif profil
-Route::get('/modifier-profil', 'usersController@modifprofil')->middleware('auth')->name('modifprofil');
+Route::get('/modifier-profil', 'usersController@profilaffichemaire')->middleware('auth')->name('modifprofil');
 // Route modif profil validation
 Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middleware('auth')->name('validemodifprofil');
 
