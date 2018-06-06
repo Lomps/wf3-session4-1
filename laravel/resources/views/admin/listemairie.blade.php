@@ -9,6 +9,7 @@
 			<h1>
 				Administration du site
 			</h1>
+			{{-- message de validation --}}
 			@if(session('message'))
 			<div class="alert alert-success text-center">
 				{{ session('message') }}

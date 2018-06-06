@@ -5,6 +5,7 @@
  @section('contenu')
  <main class="container-fluid">
         <section class="container">
+                {{-- header --}}
                 <div class="row" id="title">
                         <h1 class="p-4 mt-2">
                                 Communauté d'agglomération de l'Auxerrois
@@ -13,6 +14,7 @@
                                 Président : Guy Férez, maire d’Auxerre
                         </h2>
                 </div>
+                {{-- premiere section --}}
                 <div class="row p-4 mt-3" id="row1">
                         <div class="col col-sm-6 ">
                                 <p>
@@ -78,6 +80,7 @@
                                 </p>
                         </div>
                 </div>
+                {{-- seconde section --}}
                 <div class="row p-4 mt-3" id="row2">
                         <div class="col col-sm-6">
                                 <p>

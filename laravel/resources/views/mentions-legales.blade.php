@@ -10,8 +10,7 @@
                 <h2>
                     Mentions légales
                 </h2>
-                    <img class="img-fluid" src="assets/img/images.jpg" alt="logo Communauté de l'auxerrois">
-                
+                    <img class="img-fluid" src="assets/img/images.jpg" alt="logo Communauté de l'auxerrois">                
                 <h3>
                     Propriétaire du site
                 </h3>

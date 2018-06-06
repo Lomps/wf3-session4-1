@@ -19,7 +19,9 @@
 		<div class="card-columns">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Gestions thèmes</h5>
+					<h5 class="card-title">
+						Gestions thèmes
+					</h5>
 					<p class="card-text">
 						
 					</p>
@@ -74,7 +76,7 @@
 							<a href="{{URL::to('/')}}/admin/listemairie">
 								Liste des mairies
 							</a>
-							 - 
+							- 
 							<a href="#">
 								Administrer
 							</a>
@@ -87,7 +89,6 @@
 				</div>
 			</div>
 		</div>
-
 	</section>
 </main>
 @endsection
