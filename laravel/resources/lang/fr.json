@@ -1,5 +1,6 @@
 {
-    "Name": "Pseudo",
+    "Name": "Nom",
+    "Firstname": "Prénom",
     "Profile": "Profil",
     "Login": "Connexion",
     "Logout": "Déconnexion",

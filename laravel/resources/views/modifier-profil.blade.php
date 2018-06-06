@@ -117,8 +117,10 @@
 					</div>
 					<div class="col-8 mb-2">
 						<select id="mairie" name="mairie" class="form-control">
-							<option selected>Choose...</option>
-							<option>...</option>
+							<option selected>Choisir...</option>
+							@foreach($profilaffichemaire as $mairie)
+							<option value="{{$mairie->id_mairie}}">{{ $mairie->mairie }}</option>
+							@endforeach
 						</select>
 						@if($errors->has('titre'))
 						<span class="invalid-feedback">

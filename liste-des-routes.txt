@@ -1,13 +1,13 @@
-/Page d'accueil (http://localhost/monblog/public)
-/login
-/profil : page du profil user
+/Page d'accueil (http://localhost/monblog/public)-------------------> fait
+/login--------------------------------------------------------------> fait
+/profil : page du profil user---------------------------------------> fait
 /theme : choix du theme
-/ajoutarticle : ajout des articles
-/supprimearticle :  supprimer des articles
-/modifarticle : modifier un article
-/footer 
-/mentionlegale
-/contact
+/ajoutarticle : ajout des articles articleController
+/supprimearticle :  supprimer des articles articleController
+/modifarticle : modifier un article articleController
+/footer ------------------------------------------------------------> fait
+/mentionlegale -----------------------------------------------------> fait
+/contact -----------------------------------------------------------> fait
 admin/ajoutmairie
 /admin/theme
 
