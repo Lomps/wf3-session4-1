@@ -5,13 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\mairieModel as Mairie;
 use Auth;
+
 class usersController extends Controller
 {
 	// Affiche le profil
+	public function profil(){
+		$mairie = Mairie::where('id_mairie', Auth::user()->mairie_id_mairie)->first();
+		return view('profil', ['mairie' => $mairie]);
+	}
+	// Affiche la modification du profil
 	public function profilaffichemaire(){ 
 		$profilaffichemaire = Mairie::get();       	
 		return view('modifier-profil', ['profilaffichemaire' => $profilaffichemaire]);
-
 	}
 
 	// Affiche modifie le profil
