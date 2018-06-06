@@ -8,9 +8,10 @@ use Auth;
 class usersController extends Controller
 {
 	// Affiche le profil
-	public function profil(){
-		$mairie = Mairie::where('id_mairie', Auth::user()->mairie_id_mairie)->first();
-		return view('profil', ['mairie' => $mairie]);
+	public function profilaffichemaire(){ 
+		$profilaffichemaire = Mairie::get();       	
+		return view('modifier-profil', ['profilaffichemaire' => $profilaffichemaire]);
+
 	}
 
 	// Affiche modifie le profil
