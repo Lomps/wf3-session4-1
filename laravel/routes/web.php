@@ -42,19 +42,18 @@ Route::prefix('admin')->group(function() {
 // Route accueil admin 
 	Route::get('/', 'adminController@accueil')->middleware('auth')->name('admin');
 // Route liste des mairies
-	Route::get('/listemairie', 'adminController@listemairie')->middleware('auth')->name('listemairie');
+	Route::get('/liste-mairie', 'adminController@listemairie')->middleware('auth')->name('listemairie');
 // Route admin mairie
 
 // Route Affiche inscrire une mairie
-	Route::get('/inscription_mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
+	Route::get('/inscription-mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
 // Route ajout mairie
 	Route::post('/postinscription_mairie', 'adminController@postinscription_mairie')->middleware('auth')->name('postinscription_mairie');
 });
 // fin de route admin
 
 // Route articles
-//  a décommenter quand la page sera prete sinon les messages d'erreur apparaitrons
-	//Route::get('/article','articleControleur@article')->middlware('auth')->name('article');
+	Route::get('/article','articleController@article')->middlware('auth')->name('article');
 
 Auth::routes();
 
