@@ -22,7 +22,7 @@ class adminController extends Controller
 	public function listemairie(){ 
 		if(Auth::user()->role ==4){
 			$listmairie = Mairie::get();       	
-			return view('admin.listemairie', ['listemairie' => $listmairie]);
+			return view('admin.liste-mairie', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
 		}
@@ -31,7 +31,7 @@ class adminController extends Controller
 	// affiche page inscrition mairie
 	public function inscription_mairie(){
 		if(Auth::user()->role ==4){
-			return view('admin.inscription_mairie');
+			return view('admin.inscription-mairie');
 		}else{
 			return abort('404');
 		}

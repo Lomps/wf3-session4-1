@@ -53,7 +53,8 @@ Route::prefix('admin')->group(function() {
 // fin de route admin
 
 // Route articles
-	Route::get('/article','articleController@article')->middlware('auth')->name('article');
+//  a décommenter quand la page sera prete sinon les messages d'erreur apparaitrons
+	//Route::get('/article','articleControleur@article')->middlware('auth')->name('article');
 
 Auth::routes();
 

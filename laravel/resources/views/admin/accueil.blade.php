@@ -73,7 +73,7 @@
 				<div class="card-footer">
 					<p class="card-text">
 						<small class="text-muted">
-							<a href="{{URL::to('/')}}/admin/listemairie">
+							<a href="{{URL::to('/')}}/admin/liste-mairie">
 								Liste des mairies
 							</a>
 							- 
@@ -81,7 +81,7 @@
 								Administrer
 							</a>
 							- 
-							<a href="{{URL::to('/')}}/admin/inscription_mairie">
+							<a href="{{URL::to('/')}}/admin/inscription-mairie">
 								Inscrire une mairie
 							</a>
 						</small>
