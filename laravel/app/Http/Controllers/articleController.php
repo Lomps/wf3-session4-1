@@ -8,6 +8,6 @@ use App\articleModel as Articles;
 class articleController extends Controller
 {
     public function article() {
-    	return view ('articles', ['articles' => $articles]);
+    	return view ('articles');
     }
 }
