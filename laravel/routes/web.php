@@ -53,7 +53,7 @@ Route::prefix('admin')->group(function() {
 // fin de route admin
 
 // Route articles
-	Route::get('/article','articleController@article')->middlware('auth')->name('article');
+	Route::get('/article','articleController@article')->middleware('auth')->name('article');
 
 Auth::routes();
 
