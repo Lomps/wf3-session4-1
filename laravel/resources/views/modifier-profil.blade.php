@@ -28,6 +28,7 @@
 			<hr>
 			<form method="post" action="{{route('validemodifprofil')}}" enctype="miltipart/form-data">
 				{{ csrf_field() }}
+				<input type="hidden" value="{{Auth::user()->id}}" name="id" required>
 				<div class="row">
 					{{-- Nom --}}
 					<div class="col-4 mb-2 text-right">
@@ -36,7 +37,7 @@
 						</label>
 					</div>
 					<div class="col-8 mb-2">
-						<input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" id="name" value="{{ Auth::user()->name }}" required>
+						<input class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" type="text" name="name" id="name" value="{{ Auth::user()->name }}" >
 						@if($errors->has('titre'))
 						<span class="invalid-feedback">
 							<strong>
@@ -68,7 +69,7 @@
 						</label>
 					</div>
 					<div class="col-8 mb-2">
-						<input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" id="password" required>
+						<input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" id="password" >
 						@if($errors->has('titre'))
 						<span class="invalid-feedback">
 							<strong>
@@ -100,7 +101,7 @@
 						</label>
 					</div>
 					<div class="col-8 mb-2">
-						<input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" type="email" name="email" id="email" value="{{ Auth::user()->email }}" required>
+						<input class="form-control" type="email" name="email" id="email" value="{{ Auth::user()->email }}">
 						@if($errors->has('titre'))
 						<span class="invalid-feedback">
 							<strong>
@@ -117,9 +118,8 @@
 					</div>
 					<div class="col-8 mb-2">
 						<select id="mairie" name="mairie" class="form-control">
-							<option selected>Choisir...</option>
 							@foreach($profilaffichemaire as $mairie)
-							<option value="{{$mairie->id_mairie}}">{{ $mairie->mairie }}</option>
+								<option value="{{$mairie->id_mairie}}"{{(Auth::user()->mairie_id_mairie == $mairie->id_mairie) ? ' selected' : '' }}>{{ $mairie->mairie }}</option>
 							@endforeach
 						</select>
 						@if($errors->has('titre'))
