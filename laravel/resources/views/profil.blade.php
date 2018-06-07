@@ -16,7 +16,6 @@
 			<p>
 				Prénom : {{ Auth::user()->firstname}}
 			</p>
-
 			<p>
 				E-Mail : {{ Auth::user()->email }}
 			</p>
