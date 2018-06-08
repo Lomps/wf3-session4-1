@@ -77,7 +77,7 @@
 								Liste des mairies
 							</a>
 							- 
-							<a href="#">
+							<a href="{{URL::to('/')}}/admin/mairie-administration">
 								Administrer
 							</a>
 							- 

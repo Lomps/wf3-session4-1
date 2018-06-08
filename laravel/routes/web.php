@@ -43,7 +43,11 @@ Route::prefix('admin')->group(function() {
 	Route::get('/', 'adminController@accueil')->middleware('auth')->name('admin');
 // Route liste des mairies
 	Route::get('/liste-mairie', 'adminController@listemairie')->middleware('auth')->name('listemairie');
-// Route admin mairie
+// Route affiche administartion mairie
+	Route::get('/mairie-administration', 'adminController@mairieadministration')->middleware('auth')->name('mairieadministration');
+//  Route modification mairie
+
+// Route suppression mairie
 
 // Route Affiche inscrire une mairie
 	Route::get('/inscription-mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
@@ -53,8 +57,8 @@ Route::prefix('admin')->group(function() {
 // fin de route admin
 
 // Route articles
-//  a décommenter quand la page sera prete sinon les messages d'erreur apparaitrons
-	//Route::get('/article','articleControleur@article')->middlware('auth')->name('article');
+	Route::get('/article','articleController@article')->middleware('auth')->name('article');
+	Route::post('/ajoutarticle', 'articleController@ajoutarticle')->middleware('auth')->name('ajoutarticle');
 
 Auth::routes();
 

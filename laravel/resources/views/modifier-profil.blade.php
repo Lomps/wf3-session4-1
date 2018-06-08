@@ -69,7 +69,7 @@
 						</label>
 					</div>
 					<div class="col-8 mb-2">
-						<input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" id="password" >
+						<input class="form-control" type="password" name="password" id="password" >
 						@if($errors->has('titre'))
 						<span class="invalid-feedback">
 							<strong>
@@ -85,7 +85,7 @@
 						</label>
 					</div>
 					<div class="col-8 mb-2">
-						<input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password_confirmation" id="password-confirm" required>
+						<input class="form-control" type="password" name="password_confirmation" id="password-confirm">
 						@if($errors->has('titre'))
 						<span class="invalid-feedback">
 							<strong>

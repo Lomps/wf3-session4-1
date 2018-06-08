@@ -64,5 +64,13 @@ class adminController extends Controller
 		}
 	}
 
+	// affiche la page administration des maries
+	public function mairieadministration(){
+		if(Auth::user()->role ==4){$listmairie = Mairie::get();       	
+			return view('admin.mairie-administration', ['listemairie' => $listmairie]);
+		}else{
+			return abort('404');
+		}
+	}
 
 }

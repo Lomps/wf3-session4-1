@@ -19,6 +19,16 @@ body
 {
 	background-color: #372c6e !important;
 }
+/* couleur de fond sur la maquette */
+.bgWhite
+{
+	background-color: white;
+}
+/* bordure pour diferencier les zones */
+.bordure
+{
+	border: 0.1em solid black;
+}
 /*lien dropdown dans la navbar */
 a.dropdown-item
 {
