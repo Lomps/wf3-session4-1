@@ -66,7 +66,7 @@
 					<div class="row">
 						{{--  modification  --}}
 						<div class="col-6">
-							<a class="btn btn-warning btn-sm" href="">
+						<a class="btn btn-warning btn-sm" href="{{ URL::to('/')}}/admin/modification-mairie">
 								Modifier
 							</a>
 						</div>
