@@ -47,13 +47,13 @@
 						Gestion utilisteurs
 					</h5>
 					<p class="card-text">
-						
+						{{ $users}} utilisateurs enregistées
 					</p>
 				</div>
 				<div class="card-footer">
 					<p class="card-text">
 						<small class="text-muted">
-							<a href="#">
+							<a href="{{URL::to('/')}}/admin/utilisateurs">
 								Administrer
 							</a>
 						</small>

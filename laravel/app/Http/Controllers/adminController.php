@@ -4,21 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\usersModel as Users;
 use App\mairieModel as Mairie;
 
 class adminController extends Controller
 {
-    // Affiche la page admin
+	// Affiche la page admin
 	public function accueil(){
 		if(Auth::user()->role ==4){
 			$mairie = Mairie::count();
-			return view('admin.accueil', ['mairie' => $mairie]);
+			$users = Users::count();
+			return view('admin.accueil', ['mairie' => $mairie, 'users' => $users]);
 		}else{
 			return abort('404');
 		}
 	}
 
-    // Affiche la liste des mairies
+	// Affiche la liste des mairies
 	public function listemairie(){ 
 		if(Auth::user()->role ==4){
 			$listmairie = Mairie::get();       	
@@ -66,7 +68,8 @@ class adminController extends Controller
 
 	// affiche la page administration des maries
 	public function mairieadministration(){
-		if(Auth::user()->role ==4){$listmairie = Mairie::get();       	
+		if(Auth::user()->role ==4)
+		{$listmairie = Mairie::get();       	
 			return view('admin.mairie-administration', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
@@ -75,10 +78,31 @@ class adminController extends Controller
 
 	// afficge la page modification de la mairie
 	public function modificationmairie() {
-		if(Auth::user()->role ==4){$listmairie = Mairie::get();       	
+		if(Auth::user()->role ==4)
+		{$listmairie = Mairie::get();       	
 			return view('admin.modification-mairie', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
 		}
 	}
+
+	// Affichage de la pagedes utilisateurs
+	public function utilisateurs() {
+		if(Auth::user()->role ==4)
+		{$user = Users::get();       	
+			return view('admin.utilisateurs', ['users' => $user]);
+		}else{
+			return abort('404');
+		}
+	}
+
+	// activation de l'utilisateur
+	public function activeuser($id){
+        $user = Users::where('id', $id)->first();
+        $activeusers = ($user->activeuser == 1 ) ? 0 : 1;
+        Users::where('id', $id)->update(["activeuser"=> $activeusers,]);
+        return redirect()->back()->with('message', 'L\'utilisateur à été bannis !');
+    }
+
+
 }

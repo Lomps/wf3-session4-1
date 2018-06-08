@@ -53,6 +53,10 @@ Route::prefix('admin')->group(function() {
 	Route::get('/inscription-mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
 // Route ajout mairie
 	Route::post('/postinscription_mairie', 'adminController@postinscription_mairie')->middleware('auth')->name('postinscription_mairie');
+// Route affiche utilisateurs
+	Route::get('/utilisateurs', 'adminController@utilisateurs')->middleware('auth')->name('utilisateurs');
+// Route active utilisateur
+	Route::get('/active-utilisateur/{$id}', 'adminController@activeuser')->middleware('auth')->name('activeuser');
 });
 // fin de route admin
 
