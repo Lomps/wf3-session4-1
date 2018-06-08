@@ -46,7 +46,7 @@ Route::prefix('admin')->group(function() {
 // Route affiche administartion mairie
 	Route::get('/mairie-administration', 'adminController@mairieadministration')->middleware('auth')->name('mairieadministration');
 //  Route modification mairie
-
+	Route::get('/modification-mairie', 'adminController@modificationmairie')->middleware('auth')->name('modifiicationmairie');
 // Route suppression mairie
 
 // Route Affiche inscrire une mairie
