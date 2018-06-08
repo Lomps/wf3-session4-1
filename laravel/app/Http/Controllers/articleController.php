@@ -7,9 +7,12 @@ use App\articleModel as Articles;
 
 class articleController extends Controller
 {
-    public function article() {
-    	return view ('articles');
-    }
+   
+     public function articles(){ 
+		$articles = Articles::get();       	
+		return view('articles', ['articles' => $articles]);
+
+	}
 
     public function ajoutarticle(Request $donnees) {
 		$validateData = $donnees->validate([
@@ -24,7 +27,7 @@ class articleController extends Controller
 				$logoPath = time().'.'.$donnees->logo->getClientOriginalExtension();
 				$donnees->logo->move(public_path('/assets/img/uploads/'), $logoPath);
 			}
-
+			$id = $donnees['id_contenu'];
 			$article = new Article();
 			$article->titrearticle = $donnees['titre'];
 			$article->contenu = $donnees['contenu'];

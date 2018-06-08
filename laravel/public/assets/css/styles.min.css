@@ -29,6 +29,12 @@ body
 {
 	border:0.1em solid black;
 }
+.blue
+{
+	background-color: royalblue;
+	padding: 0.3em;
+	border-radius: 0.5em;
+}
 /*lien dropdown dans la navbar */
 a.dropdown-item
 {
