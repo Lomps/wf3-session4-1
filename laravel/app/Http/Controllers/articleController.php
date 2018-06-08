@@ -32,7 +32,6 @@ class articleController extends Controller
 			$article->users_iduser = Auth::User()->iduser;
 			$article->nom_image = $logoPath;
 			$article->save();
-			}
 			return redirect()->back()->with('message','Votre article est crée avec succès !');
 		}
 }
