@@ -66,20 +66,22 @@
 					<div class="row">
                         <div class="col-4">
                             @if ($user->activeuser == 0)
-							<a class="btn btn-success btn-sm" href="{{route('active-utilisateur',['id' => $users->id])}}">                                
+							<a class="btn btn-success btn-sm" href="{{ route('activeuser',['id'=>$user->id]) }}">                                
 								Activer
 							</a>
 							@endif
                         </div>
                         <div class="col-4">
-                            <a class="btn btn-warning btn-sm" href="{{-- {{route('modifutilisateur', ['id' => $User->iduser])}} --}}">                                
+                            <a class="btn btn-warning btn-sm" href="{{ route('modifuser', ['id' => $user->id]) }}">                                
 								Modifier
 							</a>
                         </div>
                         <div class="col-4">
-                            <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{-- {{ $comment->idcommentaire }} --}}">                                
+							@if ($user->role >0 && $user->role ==1)
+                            <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{ $user->id }}">                                
 								Supprimer
 							</a>
+							@endif
                         </div>
                     </div>
 				</div>
@@ -103,7 +105,7 @@
 			</div>
 			<div class="modal-body">
 				<p>
-					Voulez vous supprimer l'utilisateur ?
+					Voulez vous supprimer lutilisateur ?
 				</p>
 			</div>
 			<div class="modal-footer">
@@ -117,12 +119,12 @@
 		</div>
 	</div>
 </div>
-{{-- <script type="text/javascript">
+<script type="text/javascript">
 	$('#confirmModale').on('show.bs.modal', function(event)
 	{
-		var idcommentaire = $(event.relatedTarget).data('id');
-		$(this).find('.modal-body p').html("Voulez-vous vraiment supprimer le commentaire ?");
-		$("#confirm").attr("href", "{{URL::to('/')}}/admin/supprcommentaire/"+idcommentaire);
+		var id = $(event.relatedTarget).data('id');
+		$(this).find('.modal-body p').html("Voulez-vous vraiment supprimer l'utilistateur'?");
+		$("#confirm").attr("href", "{{URL::to('/')}}/admin/utilisateurs/delete/"+id);
 	});
-</script> --}}
+</script>
 @endsection

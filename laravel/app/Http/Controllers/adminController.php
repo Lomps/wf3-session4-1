@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\usersModel as Users;
 use App\mairieModel as Mairie;
+use App\User as User;
 
 class adminController extends Controller
 {
@@ -68,8 +69,8 @@ class adminController extends Controller
 
 	// affiche la page administration des maries
 	public function mairieadministration(){
-		if(Auth::user()->role ==4)
-		{$listmairie = Mairie::get();       	
+		if(Auth::user()->role ==4){
+		$listmairie = Mairie::get();       	
 			return view('admin.mairie-administration', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
@@ -78,18 +79,18 @@ class adminController extends Controller
 
 	// afficge la page modification de la mairie
 	public function modificationmairie() {
-		if(Auth::user()->role ==4)
-		{$listmairie = Mairie::get();       	
+		if(Auth::user()->role ==4){
+			$listmairie = Mairie::get();       	
 			return view('admin.modification-mairie', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
 		}
 	}
 
-	// Affichage de la pagedes utilisateurs
+	// Affichage de la page des utilisateurs
 	public function utilisateurs() {
-		if(Auth::user()->role ==4)
-		{$user = Users::get();       	
+		if(Auth::user()->role ==4){
+			$user = Users::get();       	
 			return view('admin.utilisateurs', ['users' => $user]);
 		}else{
 			return abort('404');
@@ -97,12 +98,55 @@ class adminController extends Controller
 	}
 
 	// activation de l'utilisateur
-	public function activeuser($id){
-        $user = Users::where('id', $id)->first();
-        $activeusers = ($user->activeuser == 1 ) ? 0 : 1;
-        Users::where('id', $id)->update(["activeuser"=> $activeusers,]);
-        return redirect()->back()->with('message', 'L\'utilisateur à été bannis !');
-    }
+	public function useractive($id) {
+		if(Auth::user()->role ==4){
+			User::where('id', $id)->update(["activeuser" => 1]);
+			return redirect()->back()->with('message', 'L\'utilisateur à été activer !');
+		}else{
+			return abort('404');
+		}
+	}
+	
+	// affiche la page de modification de l'utilisateur
+	public function modifuser($id) {
+		if(Auth::user()->role ==4){
+			$user = User::where('id', $id)->first();
+			return view('admin.modifuser', ['user' => $user]);
+		}else{
+			return arbot('404');
+		}
+	}
 
+	// valide la modification de l'utilistateur
+	public function postuser(Request $donnees){
+    	if(Auth::User()->role == 4){
+			$validatedData = $donnees->validate([
+				'name' => 'required|max:255',
+				'firstname' => 'required|max:255',
+				'email' => 'required|email',
+				'role' => 'required',
+				'activeuser' => 'required'
+			]);
+			User::where('id', $donnees["id"])->update([
+				"name"=> $donnees['name'],
+				"firstname"=> $donnees['firstname'],
+				"email"=> $donnees['email'],
+				"role"=> $donnees['role'],
+				"activeuser"=> $donnees['activeuser']
+			]);
+	    	return redirect()->route('utilisateurs')->with('message', 'Utilisateur modifié !');
+    	}else{
+    		return abort('404');
+    	}
+	}
 
+	// supprimer un utilisteur
+	public function deleteuser($id){
+    	if(Auth::User()->role == 4){
+			User::destroy($id);
+			return redirect()->back()->with('message', 'Utilisateur supprimé avec succès !');
+    	}else{
+    		return abort('404');
+    	}
+	}
 }

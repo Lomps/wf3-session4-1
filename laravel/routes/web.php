@@ -36,7 +36,6 @@ Route::get('/modifier-profil', 'usersController@profilaffichemaire')->middleware
 Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middleware('auth')->name('validemodifprofil');
 // Fin de route Utilisateur
 
-
 // Route Admin
 Route::prefix('admin')->group(function() {
 // Route accueil admin 
@@ -56,7 +55,13 @@ Route::prefix('admin')->group(function() {
 // Route affiche utilisateurs
 	Route::get('/utilisateurs', 'adminController@utilisateurs')->middleware('auth')->name('utilisateurs');
 // Route active utilisateur
-	Route::get('/active-utilisateur/{$id}', 'adminController@activeuser')->middleware('auth')->name('activeuser');
+	Route::get('/utilisateurs/active/{id}', 'adminController@useractive')->middleware('auth')->name('activeuser');
+// Route modifier utilisateur
+	Route::get('/utilisateurs/modif/{id}', 'adminController@modifuser')->middleware('auth')->name('modifuser');
+// Route validation modification utilisateur
+	Route::post('/utilisateurs/modifuser','adminController@postuser')->middleware('auth')->name('postuser');
+// Route supprimer un utilisateur
+	route::get('/utilisateurs/delete/{id}', 'adminController@deleteuser')->middleware('auth')->name('deleteuser');
 });
 // fin de route admin
 
