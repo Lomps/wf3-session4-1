@@ -15,7 +15,8 @@ class adminController extends Controller
 		if(Auth::user()->role ==4){
 			$mairie = Mairie::count();
 			$users = Users::count();
-			return view('admin.accueil', ['mairie' => $mairie, 'users' => $users]);
+			$activeuser = Users::where('activeuser', 1)->count();
+			return view('admin.accueil', ['mairie' => $mairie, 'users' => $users, 'activeuser' => $activeuser]);
 		}else{
 			return abort('404');
 		}
@@ -24,7 +25,8 @@ class adminController extends Controller
 	// Affiche la liste des mairies
 	public function listemairie(){ 
 		if(Auth::user()->role ==4){
-			$listmairie = Mairie::get();       	
+			$listmairie = Mairie::get();
+			$listmairie = Mairie::paginate(5);       	
 			return view('admin.liste-mairie', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
@@ -67,10 +69,11 @@ class adminController extends Controller
 		}
 	}
 
-	// affiche la page administration des maries
+	// affiche la page administration des mairies
 	public function mairieadministration(){
 		if(Auth::user()->role ==4){
-		$listmairie = Mairie::get();       	
+		$listmairie = Mairie::get();
+		$listmairie = Mairie::paginate(5);        	
 			return view('admin.mairie-administration', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');
@@ -90,7 +93,8 @@ class adminController extends Controller
 	// Affichage de la page des utilisateurs
 	public function utilisateurs() {
 		if(Auth::user()->role ==4){
-			$user = Users::get();       	
+			$user = Users::get();
+			$user = Users::paginate(5);      	
 			return view('admin.utilisateurs', ['users' => $user]);
 		}else{
 			return abort('404');
@@ -126,7 +130,7 @@ class adminController extends Controller
 				'email' => 'required|email',
 				'role' => 'required',
 				'activeuser' => 'required'
-			]);
+				]);
 			User::where('id', $donnees["id"])->update([
 				"name"=> $donnees['name'],
 				"firstname"=> $donnees['firstname'],

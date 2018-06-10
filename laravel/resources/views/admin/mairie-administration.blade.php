@@ -16,7 +16,7 @@
 			</div>
 			@endif		
 			<h2>
-				Liste des mairies
+				Administration des mairies
 			</h2>
 			<div class="row">
 				<div class="col-3">
@@ -81,6 +81,10 @@
 			</div>
 			<hr class="col-12">
 			@endforeach
+			{{-- pagination --}}
+			<nav aria-label="Page navigation">
+				{{ $listemairie->links('vendor.pagination.bootstrap-4') }}
+			</nav>
 		</section>
 	</div>
 </main>

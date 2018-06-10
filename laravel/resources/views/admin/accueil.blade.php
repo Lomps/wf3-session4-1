@@ -47,7 +47,9 @@
 						Gestion utilisteurs
 					</h5>
 					<p class="card-text">
-						{{ $users}} utilisateurs enregistées
+						<p>{{ $users}} utilisateurs enregistées</p>
+						<p>{{ $activeuser }} utilisateurs activés</p>
+						<p>{{ $users - $activeuser }} utilisateurs désactivés</p>
 					</p>
 				</div>
 				<div class="card-footer">

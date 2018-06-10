@@ -74,6 +74,27 @@
                         @endif
                     </div>
                 </div>
+                {{-- Mairie --}}
+                <div class="form-group row">
+                    <label for="mairie" class="col-md-3 col-form-label text-md-right">
+                        Mairie
+                    </label>
+                    <div class="col-md-8">
+                        <select class="form-control{{ $errors->has('mairie') ? ' is-invalid' : '' }}" name="mairie" id="mairie">
+                            <option selected="">
+                                Selectionnez votre ville
+                            </option>
+                            
+                        </select>
+                        @if ($errors->has('mairie'))
+                        <span class="invalid-feedback">
+                            <strong>
+                                {{ $errors->first('mairie') }}
+                            </strong>
+                        </span>
+                        @endif
+                    </div>
+                </div>
                 {{--  role  --}}
                 <div class="form-group row">
                     <label for="role" class="col-md-3 col-form-label text-md-right">
