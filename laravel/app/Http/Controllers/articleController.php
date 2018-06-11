@@ -22,7 +22,8 @@ class articleController extends Controller
 			'nom_image' => 'dimensions:max_width=300,max_height=300',
 			'nom_signature' => 'max:255',
 			'zone_id_zone' => 'required',
-			'publication_id_publication' => 'required'
+			'publication_id_publication' => 'required',
+			'zone_id_zone' => 'required'
 		]);
 
 		if ($donnees->hasFile('logo')) {
@@ -35,7 +36,8 @@ class articleController extends Controller
 			$article->contenu = $donnees['contenu'];
 			$article->nom_image = $logoPath;
 			$article->nom_signature = $donnees['nom_signature'];
-			$article->zoneidzone = $donnees['zone_id_zone'];
+			$article->zone_id_zone = $donnees['zone_id_zone'];
+			$article->publication_id_publication = $donnees['publication_id_publication'];
 			$article->users_iduser = Auth::User()->iduser;
 			$article->save();
 			return redirect()->back()->with('message','Votre article est crée avec succès !');

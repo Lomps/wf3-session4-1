@@ -606,7 +606,7 @@
       $.ajax
       (
          {
-            url: "/comm/ajoutarticle",
+            url: "{{route('ajoutarticle')}}",
             type: "POST",
             data: "id_contenu="+id_contenu+"&titre="+titre+"&contenu="+contenu+"&nom_image="+nom_image+"&nom_signature="+nom_signature+"&zone_id_zone="+zone_id_zone+"&iduser="+iduser
          })
