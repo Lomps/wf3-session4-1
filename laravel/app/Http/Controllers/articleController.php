@@ -19,9 +19,9 @@ class articleController extends Controller
 		$validateData = $donnees->validate([
 			'titre' => 'required|max:255',
 			'contenu' => 'required',
-			'nom_image' => 'dimensions:max_width=300,max_height=300'
-			'nom_signature' => 'max:255'
-			'zone_id_zone' => 'required'
+			'nom_image' => 'dimensions:max_width=300,max_height=300',
+			'nom_signature' => 'max:255',
+			'zone_id_zone' => 'required',
 			'publication_id_publication' => 'required'
 		]);
 
