@@ -33,7 +33,7 @@ class articleController extends Controller
 			$id = $donnees['id_contenu'];
 			$article = new Article();
 			$article->titre = $donnees['titre'];
-			$article->contenu = $donnees['type'];
+			$article->type = $donnees['type'];
 			$article->nom_image = $logoPath;
 			$article->nom_signature = $donnees['nom_signature'];
 			$article->zone_id_zone = $donnees['zone_id_zone'];
