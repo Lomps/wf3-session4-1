@@ -54,7 +54,7 @@ Route::prefix('admin')->group(function() {
 
 // Route articles
 	Route::get('/articles','articleController@articles')->middleware('auth')->name('articles');
-	Route::post('/ajoutarticle', 'articleController@ajoutarticle')->middleware('auth')->name('ajoutarticle');
+	Route:post('/ajoutarticle', 'articleController@ajoutarticle')->middleware('auth')->name('ajoutarticle');
 
 Auth::routes();
 

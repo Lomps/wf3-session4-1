@@ -21,9 +21,9 @@
                   <map name="p1z1" id="texte1">
                      <!--informations de votre map-->
                      @foreach($articles as $art)
-                     <area shape="rect" coords="10,10,20,30" href="#" alt="vers a"/>                      
+                     <area shape="rect" coords="{{ $art->coordonnees}}" href="{{ route('ajoutarticle', ['id_contenu'=> $art->coordoonnees]) }}" alt="vers a"/>                      
                      <p>
-                     <a class="blue" id="confirmModale" href="#" data-toggle="modal" data-target="#exampleModal" data-id='{{$art->id_zone}}'>Cliquer</a>                    
+                     <a class="blue" id="confirmModale" href="#" data-toggle="modal" data-target="#exampleModal" data-id='{{$art->contenu}}'>Cliquer</a>                    
                      </p> 
                      @endforeach                                      
                   </map>
@@ -489,10 +489,14 @@
                      </map>
                </p>
             </div>         
-         </div>
-      <!-- /Row3 -->
+         </div> 
+         <!-- /Row3 -->
+         <div class="col text-center">
+            <button type="submit" class="btn-primary btn">Valider</button>
+         </div>   
    </section>
    <!-- /Container de la page4-->
+
 
    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -503,6 +507,7 @@
              <span aria-hidden="true">&times;</span>
            </button>
          </div>
+         <form method="POST" action="{{ route('ajoutarticle') }}"></form>
          <div class="modal-body">           
              <div class="form-group">
                <textarea class="form-control" id="texte" name="texte"  required> {{ old('texte') }}</textarea>
@@ -586,4 +591,36 @@
          $('#confirm').attr('href', "{{URL::to('/')}}/ajoutarticle/");
       });
    </script>
+
+   <script type="text/javascript">
+      // Cette fonction gère l'ajout du texte saisi par l'utilisateur
+   function ajoutarticle()
+   {
+      var id_contenu = $("#id_contenu").val();
+      var titre = $("#titre").val();
+      var contenu = $("#contenu").val();
+      var nom_image = $("#nom_image").val();
+      var nom_signature = $("#nom_signature").val();
+      var zone_id_zone = $("#zone_id_zone").val();
+      var iduser = $("#iduser").val();
+      $.ajax
+      (
+         {
+            url: "/ajoutarticle",
+            type: "POST",
+            data: "id_contenu="+id_contenu+"&titre="+titre+"&contenu="+contenu+"&nom_image="+nom_image+"&nom_signature="+nom_signature+"&zone_id_zone="+zone_id_zone+"&iduser="+iduser
+         })
+      .done(function(reponse)
+      {
+         $("#contenu").html("");
+      })
+      .fail(function(error)
+      {
+         console.log(error);
+      });   
+      
+   }
+
+   </script>
+
 @endsection
