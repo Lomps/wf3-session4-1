@@ -19,13 +19,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles.min.css') }}">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-lg navbardark  bgDark">
             <div class="container">
+                {{-- lien sur logo --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{-- logo --}}
+				    <img src="{{ asset('assets/img/images.jpg') }}" style="height: 40px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +38,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        {{-- lien accueil --}}
+                        <li class="nav-item{{ (Route::currentRouteName() == 'accueil') ? ' active': '' }}">
+						    <a class="nav-link" href="{{URL::to('/')}}">
+							    {{ __('Home')}}
+							    <span class="sr-only">(current)</span>
+						    </a>
+					    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
