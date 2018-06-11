@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\articleModel as Articles;
+use App\ajoutarticleModel as Article;
 
 class articleController extends Controller
 {
@@ -19,7 +20,9 @@ class articleController extends Controller
 			'titre' => 'required|max:255',
 			'contenu' => 'required',
 			'nom_image' => 'dimensions:max_width=300,max_height=300'
-
+			'nom_signature' => 'max:255'
+			'zone_id_zone' => 'required'
+			'publication_id_publication' => 'required'
 		]);
 
 		if ($donnees->hasFile('logo')) {
@@ -30,9 +33,10 @@ class articleController extends Controller
 			$article = new Article();
 			$article->titrearticle = $donnees['titre'];
 			$article->contenu = $donnees['contenu'];
+			$article->nom_image = $logoPath;
+			$article->nom_signature = $donnees['nom_signature'];
 			$article->zoneidzone = $donnees['zone_id_zone'];
 			$article->users_iduser = Auth::User()->iduser;
-			$article->nom_image = $logoPath;
 			$article->save();
 			return redirect()->back()->with('message','Votre article est crée avec succès !');
 		}
