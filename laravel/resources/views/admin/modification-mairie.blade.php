@@ -21,7 +21,7 @@
             </h2>
             <hr>
             {{-- formulaire --}}            
-            <form method="post" action="{{route('postinscription_mairie') }}" enctype="multipart/form-data">
+            <form method="post" action="{{route('validemodif_mairie') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row">
                     {{-- champ mairie --}}
@@ -30,8 +30,9 @@
                             Mairie
                         </label>
                     </div>
+                    <input type="hidden" value="{{$afficheinfomairie->id_mairie}}" name="id_mairie">
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('mairie') ? ' is-invalid' : '' }}" type="text" name="mairie" id="mairie" value="{{ old('mairie') }}" required>
+                        <input class="form-control{{ $errors->has('mairie') ? ' is-invalid' : '' }}" type="text" name="mairie" id="mairie" value="{{$afficheinfomairie->mairie}}" required>
                         @if($errors->has('mairie'))
                         <span class="invalid-feedback">
                             <strong>
@@ -47,7 +48,7 @@
                         </label>
                     </div>
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('adresse') ? ' is-invalid' : '' }}" type="text" name="adresse" id="adresse" value="{{ old('adresse') }}" required>
+                        <input class="form-control{{ $errors->has('adresse') ? ' is-invalid' : '' }}" type="text" name="adresse" id="adresse" value="{{$afficheinfomairie->adresse}}" required>
                         @if($errors->has('adresse'))
                         <span class="invalid-feedback">
                             <strong>
@@ -63,7 +64,7 @@
                         </label>
                     </div>
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('code_postal') ? ' is-invalid' : '' }}" type="text" name="code_postal" id="code_postal" value="{{ old('code_postal') }}" required>
+                        <input class="form-control{{ $errors->has('code_postal') ? ' is-invalid' : '' }}" type="text" name="code_postal" id="code_postal" value="{{$afficheinfomairie->code_postal}}" required>
                         @if($errors->has('code_postal'))
                         <span class="invalid-feedback">
                             <strong>
@@ -79,7 +80,7 @@
                         </label>
                     </div>
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('ville') ? ' is-invalid' : '' }}" type="text" name="ville"  value="{{ old('ville') }}" required>
+                        <input class="form-control{{ $errors->has('ville') ? ' is-invalid' : '' }}" type="text" name="ville"  value="{{$afficheinfomairie->ville}}" required>
                         @if($errors->has('ville'))
                         <span class="invalid-feedback">
                             <strong>
@@ -95,7 +96,7 @@
                         </label>
                     </div>
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" type="phone" name="telephone" id="telephone" value="{{ old('telephone') }}" required>
+                        <input class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" type="phone" name="telephone" id="telephone" value="{{$afficheinfomairie->telephone}}" required>
                         @if($errors->has('telephone'))
                         <span class="invalid-feedback">
                             <strong>
@@ -111,7 +112,7 @@
                         </label>
                     </div>
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('email_mairie') ? ' is-invalid' : '' }}" type="email" name="email_mairie" id="email_mairie" value="{{ old('email_mairie') }}" required>
+                        <input class="form-control{{ $errors->has('email_mairie') ? ' is-invalid' : '' }}" type="email" name="email_mairie" id="email_mairie" value="{{$afficheinfomairie->email_mairie}}" required>
                         @if($errors->has('email_mairie'))
                         <span class="invalid-feedback">
                             <strong>
@@ -127,14 +128,7 @@
                         </label>
                     </div>
                     <div class="col-9 mb-2">
-                        <input class="form-control{{ $errors->has('site') ? ' is-invalid' : '' }}" type="text" name="site" id="site" value="{{ old('site') }}">
-                        @if($errors->has('site'))
-                        <span class="invalid-feedback">
-                            <strong>
-                                {{ $errors->first('site') }}
-                            </strong>
-                        </span>
-                        @endif
+                        <input class="form-control" type="text" name="site" id="site" value="{{$afficheinfomairie->site}}">
                     </div>
                     {{-- bouton modofication --}}
                     <div class="col-2 mb-2 text-right"></div>

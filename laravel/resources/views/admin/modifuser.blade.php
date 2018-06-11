@@ -80,11 +80,11 @@
                         Mairie
                     </label>
                     <div class="col-md-8">
+                        {{--  select mairie  --}}
                         <select class="form-control{{ $errors->has('mairie') ? ' is-invalid' : '' }}" name="mairie" id="mairie">
-                            <option selected="">
-                                Selectionnez votre ville
-                            </option>
-                            
+                            @foreach($affichelistemaire as $mairie)
+                            <option value="{{$mairie->id_mairie}}"{{($user->mairie_id_mairie == $mairie->id_mairie) ? ' selected' : '' }}>{{ $mairie->mairie }}</option>
+                            @endforeach
                         </select>
                         @if ($errors->has('mairie'))
                         <span class="invalid-feedback">

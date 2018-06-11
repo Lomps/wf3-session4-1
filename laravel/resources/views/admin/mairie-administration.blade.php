@@ -59,22 +59,24 @@
 				</div>
 				{{-- utilisateur --}}
 				<div class="col-1 text-left">
-					{{--  {{ $mairie->telephone }}  --}}
+					{{--  {{ $Smairie->nbr  }}   --}}
 				</div>
 				{{--  action  --}}
 				<div class="col-2">
 					<div class="row">
 						{{--  modification  --}}
 						<div class="col-6">
-						<a class="btn btn-warning btn-sm" href="{{ URL::to('/')}}/admin/modification-mairie">
+						<a class="btn btn-warning btn-sm" href="{{ URL::to('/')}}/admin/modification-mairie/{{$mairie->id_mairie}}">
 								Modifier
 							</a>
 						</div>
 						{{--  suppression  --}}
 						<div class="col-6">
-							<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="">
+							@if($mairie->nbre == 0)
+							<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{$mairie->id_mairie}}">
 								Supprimer
 							</a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -115,11 +117,11 @@
 		</div>
 	</div>
 </div>
-{{--  <script type="text/javascript">
+  <script type="text/javascript">
 	$('#confirmModale').on('show.bs.modal', function (event) {
-		var iduser = $(event.relatedTarget).data('id');
+		var id = $(event.relatedTarget).data('id');
 		$(this).find('.modal-body p').html("Voulez-vous vraiment supprimer cet utilisateur ?");
-		$("#confirm").attr("href", "{{URL::to('/')}}/admin/utilisateurs/delete/"+iduser);
+		$("#confirm").attr("href", "{{URL::to('/')}}/admin/mairiesupprime/"+id);
 	});
-</script>  --}}
+</script>  
 @endsection

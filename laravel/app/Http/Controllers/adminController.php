@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\usersModel as Users;
 use App\mairieModel as Mairie;
+use App\nbr_utilisateurs_mairieModel as Num;
 use App\User as User;
 use App\themeModel as Theme;
 use App\pageModel as Pages;
@@ -93,6 +94,56 @@ class adminController extends Controller
 		}
 	}
 
+	//Modification mairie
+	public function modifimairie($id) {
+		if (Auth::user()->role == 4) {
+			$afficheinfomairie = Mairie::where('id_mairie',$id)->first();
+			return view('admin.modification-mairie', ['afficheinfomairie'=>$afficheinfomairie]);
+		}else{
+			return abort('404');
+		}
+	}
+
+	// valid modif mairie
+	public function validemodif_mairie(Request $donnees) {
+		if(Auth::User()->role == 4){
+			$validatedData = $donnees->validate([
+				'id_mairie'=> 'required',
+				'mairie' => 'required|max:255',
+				'adresse' => 'required|max:255',
+				'code_postal' => 'required|max:5',
+				'ville' => 'required|max:255',
+				'telephone' => 'required|max:14',
+				'email_mairie' => 'required|max:255',
+				'site' => 'max:255'
+			]);
+			
+			Mairie::where('id_mairie', $donnees["id_mairie"])->update([
+				"id_mairie"=>$donnees['id_mairie'],
+				"mairie"=> $donnees['mairie'],
+				"adresse"=> $donnees['adresse'],
+				"code_postal"=> $donnees['code_postal'],
+				"ville"=> $donnees['ville'],
+				"telephone"=> $donnees['telephone'],
+				"email_mairie"=> $donnees['email_mairie'],
+				"site"=> $donnees['site']
+			]);
+		    	return redirect()->back()->with('message', 'Modification terminée avec succé');
+		}else{
+				return abort('404');
+		}
+	}
+
+	//supprimer une mairie
+	public function delmairie($id) {
+		if(Auth::user()->role == 4){
+			Mairie::destroy($id);
+			return redirect()->back()->with('message', 'Mairie supprimé avec succès !');
+		}else{
+			return abort('404');
+		}
+	}
+
 	// Affichage de la page des utilisateurs
 	public function utilisateurs() {
 		if(Auth::user()->role ==4){
@@ -118,7 +169,8 @@ class adminController extends Controller
 	public function modifuser($id) {
 		if(Auth::user()->role ==4){
 			$user = User::where('id', $id)->first();
-			return view('admin.modifuser', ['user' => $user]);
+			$affichelistemaire = Mairie::get();
+			return view('admin.modifuser', ['user' => $user,'affichelistemaire'=>$affichelistemaire]);
 		}else{
 			return arbot('404');
 		}
@@ -132,14 +184,16 @@ class adminController extends Controller
 				'firstname' => 'required|max:255',
 				'email' => 'required|email',
 				'role' => 'required',
-				'activeuser' => 'required'
+				'activeuser' => 'required',
+				'mairie'=> 'required'
 				]);
 			User::where('id', $donnees["id"])->update([
 				"name"=> $donnees['name'],
 				"firstname"=> $donnees['firstname'],
 				"email"=> $donnees['email'],
 				"role"=> $donnees['role'],
-				"activeuser"=> $donnees['activeuser']
+				"activeuser"=> $donnees['activeuser'],
+				"mairie_id_mairie"=> $donnees['mairie']
 			]);
 	    	return redirect()->route('utilisateurs')->with('message', 'Utilisateur modifié !');
     	}else{

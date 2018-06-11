@@ -45,9 +45,11 @@ Route::prefix('admin')->group(function() {
 // Route affiche administartion mairie
 	Route::get('/mairie-administration', 'adminController@mairieadministration')->middleware('auth')->name('mairieadministration');
 //  Route modification mairie
-	Route::get('/modification-mairie', 'adminController@modificationmairie')->middleware('auth')->name('modifiicationmairie');
+	Route::get('/modification-mairie/{id}', 'adminController@modifimairie')->middleware('auth')->name('modifiicationmairie');
+//	Route validation des modification de mairie
+	Route::post('validemodif_mairie', 'adminController@validemodif_mairie')->middleware('auth')->name('validemodif_mairie');
 // Route suppression mairie
-
+	Route::get('/mairiesupprime/{id}', 'adminController@delmairie')->middleware('auth')->name('delmairie');
 // Route Affiche inscrire une mairie
 	Route::get('/inscription-mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
 // Route ajout mairie
