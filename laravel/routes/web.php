@@ -62,6 +62,15 @@ Route::prefix('admin')->group(function() {
 	Route::post('/utilisateurs/modifuser','adminController@postuser')->middleware('auth')->name('postuser');
 // Route supprimer un utilisateur
 	route::get('/utilisateurs/delete/{id}', 'adminController@deleteuser')->middleware('auth')->name('deleteuser');
+// Route affiche theme
+	Route::get('/theme', 'adminController@theme')->middleware('auth')->name('theme');
+// Route voir images du theme
+	Route::get('/theme-vue/{id}', 'adminController@themevue')->middleware('auth')->name('themevue');
+// Route modifier images
+
+// Afficger les coordonées
+	Route::get('/theme-coordonées/{id}', 'adminController@themecoord')->middleware('auth')->name('themecoord');
+// Modif coordonées
 });
 // fin de route admin
 

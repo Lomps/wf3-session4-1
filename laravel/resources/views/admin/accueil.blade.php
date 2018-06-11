@@ -23,13 +23,13 @@
 						Gestions thèmes
 					</h5>
 					<p class="card-text">
-						
+						{{ $theme }} thèmes enregistés
 					</p>
 				</div>
 				<div class="card-footer">
 					<p class="card-text">
 						<small class="text-muted">
-							<a href="#">
+							<a href="{{URL::to('/')}}/admin/theme">
 								Administrer
 							</a> 
 							- 

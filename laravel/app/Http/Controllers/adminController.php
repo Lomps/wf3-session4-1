@@ -7,6 +7,8 @@ use Auth;
 use App\usersModel as Users;
 use App\mairieModel as Mairie;
 use App\User as User;
+use App\themeModel as Theme;
+use App\pageModel as Pages;
 
 class adminController extends Controller
 {
@@ -16,7 +18,8 @@ class adminController extends Controller
 			$mairie = Mairie::count();
 			$users = Users::count();
 			$activeuser = Users::where('activeuser', 1)->count();
-			return view('admin.accueil', ['mairie' => $mairie, 'users' => $users, 'activeuser' => $activeuser]);
+			$theme = Theme::count();
+			return view('admin.accueil', ['mairie' => $mairie, 'users' => $users, 'activeuser' => $activeuser, 'theme' => $theme]);
 		}else{
 			return abort('404');
 		}
@@ -153,4 +156,39 @@ class adminController extends Controller
     		return abort('404');
     	}
 	}
+
+	// affiche la page theme
+	public function theme(){
+		if(Auth::User()->role == 4){
+			$theme = Theme::get();
+			return view('admin.theme', ['themes' => $theme]);
+		}else{
+			return abort('404');
+		}
+	}
+
+	// affiche les page du thème
+	public function themevue($id){
+		if(Auth::User()->role ==4){
+			$theme = Theme::where('id_theme', $id)->get();
+			$page = Pages::where('theme_id_theme', $id)->get();
+			return view('admin.themevue', ['page'=> $page, 'themes' => $theme]);
+		}else{
+			return abort('404');
+		}
+	}
+
+	// modifie les pages du theme
+
+
+	// affiche la page des coordonées du theme
+	// public function themecoord($id){
+	// 	if(Auth::User()->role ==4){
+	// 		$zone = Zones::where('id_zone', $id)->get();
+	// 		return view('admin.themecoord', ['zones' => $zone]);
+	// 	}else{
+	// 		return abort('404');
+	// 	}
+	// }
+
 }
