@@ -36,7 +36,6 @@ Route::get('/modifier-profil', 'usersController@profilaffichemaire')->middleware
 Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middleware('auth')->name('validemodifprofil');
 // Fin de route Utilisateur
 
-
 // Route Admin
 Route::prefix('admin')->group(function() {
 // Route accueil admin 
@@ -46,13 +45,25 @@ Route::prefix('admin')->group(function() {
 // Route affiche administartion mairie
 	Route::get('/mairie-administration', 'adminController@mairieadministration')->middleware('auth')->name('mairieadministration');
 //  Route modification mairie
-
+	Route::get('/modification-mairie/{id}', 'adminController@modifimairie')->middleware('auth')->name('modifiicationmairie');
+// Route validation des modification de mairie
+	Route::post('validemodif_mairie', 'adminController@validemodif_mairie')->middleware('auth')->name('validemodif_mairie');
 // Route suppression mairie
-
+	Route::get('/mairiesupprime/{id}', 'adminController@delmairie')->middleware('auth')->name('delmairie');
 // Route Affiche inscrire une mairie
 	Route::get('/inscription-mairie', 'adminController@inscription_mairie')->middleware('auth')->name('inscription_mairie');
 // Route ajout mairie
 	Route::post('/postinscription_mairie', 'adminController@postinscription_mairie')->middleware('auth')->name('postinscription_mairie');
+// Route affiche utilisateurs
+	Route::get('/utilisateurs', 'adminController@utilisateurs')->middleware('auth')->name('utilisateurs');
+// Route active utilisateur
+	Route::get('/utilisateurs/active/{id}', 'adminController@useractive')->middleware('auth')->name('activeuser');
+// Route modifier utilisateur
+	Route::get('/utilisateurs/modif/{id}', 'adminController@modifuser')->middleware('auth')->name('modifuser');
+// Route validation modification utilisateur
+	Route::post('/utilisateurs/modifuser','adminController@postuser')->middleware('auth')->name('postuser');
+// Route supprimer un utilisateur
+	route::get('/utilisateurs/delete/{id}', 'adminController@deleteuser')->middleware('auth')->name('deleteuser');
 });
 // fin de route admin
 

@@ -68,10 +68,6 @@
 			</div>
 			<hr class="col-12">
 			@endforeach
-			{{-- pagination --}}
-			<nav aria-label="Page navigation">
-				{{ $listemairie->links('vendor.pagination.bootstrap-4') }}
-			</nav>
 		</section>
 	</div>
 </main>
