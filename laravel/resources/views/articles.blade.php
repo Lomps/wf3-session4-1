@@ -588,12 +588,12 @@
          var id = $(event.relatedTarget).data('id');   
          var contenu = $(event.relatedTarget).data('contenu');      
          $(this).find('.modal-body p').html("Entrez votre texte");
-         $('#confirm').attr('href', "{{URL::to('/')}}/ajoutarticle/");
       });
    </script>
 
    <script type="text/javascript">
       // Cette fonction gère l'ajout du texte saisi par l'utilisateur
+      $('#confirm').on('click',ajoutarticle);
    function ajoutarticle()
    {
       var id_contenu = $("#id_contenu").val();
@@ -606,7 +606,7 @@
       $.ajax
       (
          {
-            url: "/ajoutarticle",
+            url: "/comm/ajoutarticle",
             type: "POST",
             data: "id_contenu="+id_contenu+"&titre="+titre+"&contenu="+contenu+"&nom_image="+nom_image+"&nom_signature="+nom_signature+"&zone_id_zone="+zone_id_zone+"&iduser="+iduser
          })
