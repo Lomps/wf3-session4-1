@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class articleModel extends Model
 {
     // table contenu pour article
-    protected $table = 'listecontenus';
+    protected $table = 'contenu';
     protected $primaryKey = 'id_contenu';
     public $timestamps = false;
 }
