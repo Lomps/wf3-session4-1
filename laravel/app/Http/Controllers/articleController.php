@@ -22,22 +22,20 @@ class articleController extends Controller
     public function ajoutarticle(Request $donnees) {
 		$validateData = $donnees->validate([
 			'contenu' => 'required|max:255',
-			'type' => 'required',
-			'nom_image' => 'required',
+			'type' => 'required',			
 			'zone_id_zone' => 'required',
 			'publication_id_publication' => 'required',
-		]);
-			
+		]);			  
 
 			$id = $donnees['id_contenu'];
-			$article = new Article();
-
-
-	switch(type)
+			$article = new Article();			
+		switch('type')
         {    
            //choix titre    
            case 1:
            $article->contenu = $donnees['contenu'];
+           die('titi');
+
            //ckeditor pour inserer un texte
            case 2:
              $article->contenu = $donnees['contenu'];
@@ -52,15 +50,10 @@ class articleController extends Controller
            break;
                     
         }
-     });
-
-
-			$article->contenu = $donnees['contenu'];
-			$article->type = $donnees['type'];
-			$article->nom_image = $logoPath;
+     		$article->contenu = $donnees['contenu'];
+			$article->type = $donnees['type'];			
 			$article->zone_id_zone = $donnees['zone_id_zone'];
-			$article->publication_id_publication = $donnees['publication_id_publication'];
-			$article->users_iduser = Auth::User()->iduser;
+			$article->publication_id_publication = $donnees['publication_id_publication'];			
 			$article->save();
 			return redirect()->back()->with('message','Votre article est crée avec succès !');
 		}
