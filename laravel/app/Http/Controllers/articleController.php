@@ -21,37 +21,37 @@ class articleController extends Controller
 
     public function ajoutarticle(Request $donnees) {
 		$validateData = $donnees->validate([
-			'contenu' => 'required|max:255',
+			'contenu' => 'required',
 			'type' => 'required',			
-			'zone_id_zone' => 'required',
+			'zone_id_zone' => 'required',			
 			'publication_id_publication' => 'required',
 		]);			  
 
 			$id = $donnees['id_contenu'];
-			$article = new Article();			
-		switch('type')
+			$article = new Article();						
+		switch($donnees['type'])
         {    
            //choix titre    
            case 1:
            $article->contenu = $donnees['contenu'];
-           die('titi');
-
+          
+           break;
            //ckeditor pour inserer un texte
            case 2:
              $article->contenu = $donnees['contenu'];
            break;
            //inserer une image
-           case 3:
-           $article->nom_image = $donnees['nom_image'];
-             if ($donnees->hasFile('logo')) {
-				$logoPath = time().'.'.$donnees->logo->getClientOriginalExtension();
-				$donnees->logo->move(public_path('/assets/img/uploads/'), $logoPath);
+           case 3:	           
+           $article->contenu = $donnees['contenu'];          
+             if ($donnees->hasFile('contenu')) {
+				$logoPath = time().'.'.$donnees->contenu->getClientOriginalExtension();
+				$donnees->contenu->move(public_path('/assets/img/uploads/'), $logoPath);
 			}
            break;
                     
         }
      		$article->contenu = $donnees['contenu'];
-			$article->type = $donnees['type'];			
+			$article->type = $donnees['type'];		
 			$article->zone_id_zone = $donnees['zone_id_zone'];
 			$article->publication_id_publication = $donnees['publication_id_publication'];			
 			$article->save();
