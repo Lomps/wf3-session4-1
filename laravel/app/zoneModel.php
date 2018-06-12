@@ -10,4 +10,3 @@ class zoneModel extends Model
     protected $primaryKey = 'id_zone';
     public $timestamps = false;
 }
-}
