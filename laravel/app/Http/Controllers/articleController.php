@@ -12,10 +12,15 @@ class articleController extends Controller
    
      public function articles(){ 
 		$articles = Articles::get();
-		$zone = Zone::get();       	
+		$zone = Zone::orderBy('id_zone', 'asc')->get();       	
 		return view('articles', ['articles' => $articles,'zone'=> $zone]);
 
 	}
+
+
+
+
+
 
 // valide l'ajout d'un article
 
