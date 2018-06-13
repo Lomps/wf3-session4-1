@@ -6,17 +6,18 @@ use Illuminate\Http\Request;
 use App\articleModel as Articles;
 use App\ajoutarticleModel as Article;
 use App\zoneModel as Zone;
+use App\pageModel as Page;
 
 class articleController extends Controller
 {
    
      public function articles(){ 
-		$articles = Articles::paginate(1);
+     	$page = Page::paginate(1);
+		$articles = Articles::get();
 		$zone = Zone::orderBy('id_zone', 'asc')->get();       	
 		return view('articles', ['articles' => $articles,'zone'=> $zone]);
 
 	}
-
 
 
 

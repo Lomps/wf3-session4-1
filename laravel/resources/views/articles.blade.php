@@ -23,9 +23,10 @@
             <area shape="{{$art->forme}}" coords="{{$art->coordonnees}}" href="#" data-toggle="modal" data-target="#mamodale" data-type="{{$art->type_donnee}}"" data-zone="{{$art->id_zone}}"/>                                    
       @endforeach      
       </map>
-      <nav aria-label>
-         {{asset('assets/img/') }}->links('vendor.pagination.bootstrap-4') }}
-      </nav>   
+      {{-- pagination --}}
+            <nav aria-label="Page navigation">
+                {{ $articles->links('vendor.pagination.bootstrap-4') }}
+            </nav> 
 		<!-- ajout du bouton valider-->   			
       <div class="col text-center">
           <button type="submit" id="myForm" class="btn-primary btn">Valider</button>
