@@ -11,7 +11,7 @@ class articleController extends Controller
 {
    
      public function articles(){ 
-		$articles = Articles::get();
+		$articles = Articles::paginate(1);
 		$zone = Zone::orderBy('id_zone', 'asc')->get();       	
 		return view('articles', ['articles' => $articles,'zone'=> $zone]);
 
