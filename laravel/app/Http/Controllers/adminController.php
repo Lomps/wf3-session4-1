@@ -76,8 +76,8 @@ class adminController extends Controller
 	// affiche la page administration des mairies
 	public function mairieadministration(){
 		if(Auth::user()->role ==4){		
-			$listmairie = Mairie::get();
-			$listmairie = Mairie::paginate(5);        	
+			$listmairie = Num::get();
+			$listmairie = Num::paginate(5);        	
 			return view('admin.mairie-administration', ['listemairie' => $listmairie]);
 		}else{
 			return abort('404');

@@ -81,7 +81,7 @@
 				</div>
 				{{-- utilisateur --}}
 				<div class="col-1 text-left">
-					{{--  {{ $mairie->nbre  }}   --}}
+					{{ $mairie->nbre  }}
 				</div>
 				{{--  action  --}}
 				<div class="col-2 text-center">
