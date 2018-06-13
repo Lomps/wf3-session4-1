@@ -13,11 +13,8 @@ class articleController extends Controller
 {
     public function articles()
     {
-        $page = Page::where('id_page', 1)->get();
-        $page = Page::paginate(1);
-        $articles = Articles::get();
-        $zone = Zone::orderBy('id_zone', 'asc')->get();
-        return view('articles', ['articles' => $articles,'zone'=> $zone, 'page'=> $page]);   
+        $page = Page::where('id_page', $_GET['page'])->get();
+        return view('articles', ['page'=> $page]);   
     }
 
     public function ajoutarticle(Request $donnees) {

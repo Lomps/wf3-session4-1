@@ -18,7 +18,7 @@
 			<!-- col-->                   
         <img src="{{asset('assets/img') }}/{{$page['0']->images}}" alt="Maquette" usemap="#maquette" >
         <map name="maquette">          
-        @foreach ($zone as $pa) 
+        @foreach ($page as $pa) 
           <area shape="{{$pa->forme}}" coords="{{$pa->coordonnees}}" href="#" data-toggle="modal" data-target="#mamodale" data-type="{{$pa->type_donnee}}"" data-zone="{{$pa->id_zone}}"/>
         @endforeach 
         </map>
@@ -31,9 +31,6 @@
             <p id="feedback"></p>        
         </form>          
       </div> 
-      <nav aria-label="Page navigation">        
-        {{ $page->links('vendor.pagination.bootstrap-4') }}                
-      </nav>   
    </section>
    <!-- /Container de la page-->
    </main>
