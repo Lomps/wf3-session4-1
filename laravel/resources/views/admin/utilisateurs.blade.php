@@ -1,100 +1,105 @@
 @extends('layouts.adminlayout')
 
-@section('title', "Liste des utilisateurs")
+@section('title', "Administration du site")
 
 @section('contenu')
-<main class="container">
+{{--  header  --}}
+<header class="container">
 	<div class="row">
-		<section class="col-12">						
+		<div class="col-12">						
 			<h1>
 				Administration du site
 			</h1>
+		</div>
+	</div>
+</header>
+{{--  contenu  --}}
+<section class="container pb-4">
+	<main class="row pt-3">
+		<div class="col-12">
 			{{-- message de validation --}}
 			@if(session('message'))
-			<div class="alert alert-success text-center">
-				{{ session('message') }}
-			</div>
+				<div class="alert alert-success text-center">
+					{{ session('message') }}
+				</div>
 			@endif		
 			<h2>
 				Liste des utilisateurs
 			</h2>
+		</div>
+		<div class="col-12">
 			<div class="row">
 				<div class="col-2">
-					Nom
-				</div>
-				<div class="col-2">
-					Prénom
+					<strong>
+						Nom
+					</strong>
 				</div>
 				<div class="col-3">
-					Email
+					<strong>
+						Prénom
+					</strong>
 				</div>
-				<div class="col-1 text-center">
-					Role
+				<div class="col-2 text-center">
+					<strong>
+						Role
+					</strong>
 				</div>
-				<div class="col-1 text-center">
-					Statut
+				<div class="col-2 text-center">
+					<strong>
+						Statut
+					</strong>
 				</div>
 				<div class="col-3 text-center">
-					Action
+					<strong>
+						Action
+					</strong>
 				</div>
 				<hr class="col-12">
 			</div>				
-			@foreach($users as $user)
+		@foreach($users as $user)
 			<div class="row py-1">
 				{{-- Nom --}}
 				<div class="col-2">
 					{{ $user->name }}
 				</div>
 				{{-- Prénom --}}
-				<div class="col-2">
+				<div class="col-3">
 					{{ $user->firstname }}
 				</div>
-				{{-- email --}}
-				<div class="col-3">
-					{{ $user->email }}
-				</div>
 				{{-- Role --}}
-				<div class="col-1 text-center">
+				<div class="col-2 text-center">
 					{{ $user->role }}
 				</div>
 				{{-- statut --}}
-				<div class="col-1 text-center">
+				<div class="col-2 text-center">
 					{{ $user->activeuser }}
 				</div>
-				{{-- email --}}
-				<div class="col-3">
-					<div class="row">
-                        <div class="col-4">
-                            @if ($user->activeuser == 0)
-							<a class="btn btn-success btn-sm" href="{{ route('activeuser',['id'=>$user->id]) }}">                                
-								Activer
-							</a>
-							@endif
-                        </div>
-                        <div class="col-4">
-                            <a class="btn btn-warning btn-sm" href="{{ route('modifuser', ['id' => $user->id]) }}">                                
-								Modifier
-							</a>
-                        </div>
-                        <div class="col-4">
-							@if ($user->role >0 && $user->role ==1)
-                            <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{ $user->id }}">                                
-								Supprimer
-							</a>
-							@endif
-                        </div>
-                    </div>
+				{{-- action --}}
+				<div class="col-3 text-center">
+					@if ($user->activeuser == 0)
+						<a class="btn btn-success btn-sm" href="{{ route('activeuser',['id'=>$user->id]) }}">                                
+							Activer
+						</a>
+					@endif
+                        <a class="btn btn-warning btn-sm" href="{{ route('modifuser', ['id' => $user->id]) }}">                                
+							Modifier
+						</a>
+					@if ($user->role >0 && $user->role ==1)
+                        <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{ $user->id }}">                                
+							Supprimer
+						</a>
+					@endif                        
 				</div>
 			</div>
 			<hr class="col-12">
-			@endforeach
+		@endforeach
 			{{-- pagination --}}
 			<nav aria-label="Page navigation">
 				{{ $users->links('vendor.pagination.bootstrap-4') }}
 			</nav>
-		</section>
-	</div>
-</main>
+		</div>
+	</main>
+</section>
 {{-- modal suppression --}}
 <div class="modal" id="confirmModale" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">

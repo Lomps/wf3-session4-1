@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles.min.css') }}">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbardark  bgDark">
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
 		<section class="container">
 			{{-- lien sur logo --}}
 			<a class="navbar-brand" href="{{ URL::to('/') }}">
@@ -32,6 +32,11 @@
 						<a class="nav-link" href="{{URL::to('/')}}">
 							{{ __('Home')}}
 							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item{{ (Route::currentRouteName() == 'article') ? ' active': '' }}">
+						<a class="nav-link" href="{{URL::to('/')}}">
+							{{ __('Posts')}}
 						</a>
 					</li>
 				</ul>
@@ -65,7 +70,6 @@
 							{{ Auth::user()->name }} 
 							<span class="caret"></span>
 						</a>
-
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							{{-- lien profil --}}
 							<a class="dropdown-item" href="{{ route('profil') }}">

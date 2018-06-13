@@ -1,14 +1,22 @@
 @extends('layouts.adminlayout')
 
-@section('title', "Liste de mairie")
+@section('title', "Administration du site")
 
 @section('contenu')
-<main class="container">
+{{--  header  --}}
+<header class="container">
 	<div class="row">
-		<section class="col-12">						
+		<div class="col-12">						
 			<h1>
 				Administration du site
 			</h1>
+		</div>
+	</div>
+</header>
+{{--  contenu  --}}
+<section class="container pb-4">
+	<main class="row pt-3">
+		<div class="col-12">
 			{{-- message de validation --}}
 			@if(session('message'))
 			<div class="alert alert-success text-center">
@@ -18,24 +26,38 @@
 			<h2>
 				Liste des mairies
 			</h2>
+		</div>
+		<div class="col-12">
 			<div class="row">
 				<div class="col-2">
-					Mairie
+					<strong>
+						Mairie
+					</strong>
 				</div>
 				<div class="col-3">
-					Adresse
+					<strong>
+						Adresse
+					</strong>
 				</div>
 				<div class="col-1">
-					Code postal
+					<strong>
+						Code postal
+					</strong>
 				</div>
 				<div class="col-2">
-					Ville
+					<strong>
+						Ville
+					</strong>
 				</div>
 				<div class="col-1">
-					Téléphone
+					<strong>
+						Téléphone
+					</strong>
 				</div>
 				<div class="col-3">
-					Email
+					<strong>
+						Email
+					</strong>
 				</div>
 				<hr class="col-12">
 			</div>				
@@ -72,7 +94,7 @@
 			<nav aria-label="Page navigation">
 				{{ $listemairie->links('vendor.pagination.bootstrap-4') }}
 			</nav>
-		</section>
-	</div>
-</main>
+		</div>
+	</main>
+</section>
 @endsection

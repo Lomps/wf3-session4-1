@@ -1,14 +1,22 @@
 @extends('layouts.adminlayout')
 
-@section('title', "Liste de mairie")
+@section('title', "Administration du site")
 
 @section('contenu')
-<main class="container">
+{{--  header  --}}
+<header class="container">
 	<div class="row">
-		<section class="col-12">						
+		<div class="col-12">						
 			<h1>
 				Administration du site
 			</h1>
+		</div>
+	</div>
+</header>
+{{--  contenu  --}}
+<section class="container pb-4">
+	<main class="row pt-3">
+		<div class="col-12">
 			{{-- message de validation --}}
 			@if(session('message'))
 			<div class="alert alert-success text-center">
@@ -18,24 +26,38 @@
 			<h2>
 				Administration des mairies
 			</h2>
+		</div>
+		<div class="col-12">
 			<div class="row">
 				<div class="col-3">
-					Mairie
+					<strong>
+						Mairie
+					</strong>
 				</div>
 				<div class="col-2">
-					Adresse
+					<strong>
+						Adresse
+					</strong>
 				</div>
 				<div class="col-1">
-					Code postal
+					<strong>
+						Code postal
+					</strong>
 				</div>				
 				<div class="col-3">
-					Ville
+					<strong>
+						Ville
+					</strong>
 				</div>
 				<div class="col-1 text-left">
-					Utilisateur
+					<strong>
+						Utilisateur
+					</strong>
 				</div>
 				<div class="col-2 text-center">
-					Action
+					<strong>
+						Action
+					</strong>
 				</div>
 				<hr class="col-12">
 			</div>				
@@ -59,26 +81,21 @@
 				</div>
 				{{-- utilisateur --}}
 				<div class="col-1 text-left">
-					{{--  {{ $Smairie->nbr  }}   --}}
+					{{--  {{ $mairie->nbre  }}   --}}
 				</div>
 				{{--  action  --}}
-				<div class="col-2">
-					<div class="row">
-						{{--  modification  --}}
-						<div class="col-6">
-						<a class="btn btn-warning btn-sm" href="{{ URL::to('/')}}/admin/modification-mairie/{{$mairie->id_mairie}}">
-								Modifier
-							</a>
-						</div>
-						{{--  suppression  --}}
-						<div class="col-6">
-							@if($mairie->nbre == 0)
-							<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{$mairie->id_mairie}}">
-								Supprimer
-							</a>
-							@endif
-						</div>
-					</div>
+				<div class="col-2 text-center">
+					{{--  modification  --}}
+					<a class="btn btn-warning btn-sm" href="{{ URL::to('/')}}/admin/modification-mairie/{{$mairie->id_mairie}}">
+						Modifier
+					</a>
+					{{--  suppression  --}}
+					@if($mairie->nbre == 0)
+						<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{$mairie->id_mairie}}">
+							Supprimer
+						</a>
+					@endif
+						
 				</div>
 			</div>
 			<hr class="col-12">
@@ -87,9 +104,10 @@
 			<nav aria-label="Page navigation">
 				{{ $listemairie->links('vendor.pagination.bootstrap-4') }}
 			</nav>
-		</section>
-	</div>
-</main>
+		</div>
+	</main>
+</section>
+{{--  modal  --}}
 <div class="modal" tabindex="-1" id="confirmModale" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">

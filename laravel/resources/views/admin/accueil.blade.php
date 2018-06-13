@@ -3,13 +3,19 @@
 @section('title', "Administration du site")
 
 @section('contenu')
-<main class="container">
-	<section class="row">
+{{--  header  --}}
+<header class="container">
+	<div class="row">
 		<div class="col-12">
-			<h2>
+			<h1>
 				Administration du site
-			</h2>
+			</h1>
 		</div>
+	</div>
+</header>
+{{--  contenu  --}}
+<section class="container pb-4">
+	<main class="row pt-3">
 		<div class="col-12">
 			<p>
 				Page d'administration.
@@ -91,6 +97,6 @@
 				</div>
 			</div>
 		</div>
-	</section>
-</main>
+	</main>
+</section>
 @endsection

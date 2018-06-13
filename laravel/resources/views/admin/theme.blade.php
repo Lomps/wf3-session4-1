@@ -1,14 +1,21 @@
 @extends('layouts.adminlayout')
 
-@section('title', "Liste des themes")
+@section('title', "Administration du site")
 
 @section('contenu')
-<main class="container">
+<header class="container">
 	<div class="row">
-		<section class="col-12">						
+		<div class="col-12">						
 			<h1>
 				Administration du site
 			</h1>
+		</div>
+	</div>
+</header>
+{{--  contenu  --}}
+<section class="container pb-4">
+	<main class="row pt-3">
+		<div class="col-12">
 			{{-- message de validation --}}
 			@if(session('message'))
 			<div class="alert alert-success text-center">
@@ -17,7 +24,9 @@
 			@endif		
 			<h2>
 				Liste des thèmes
-            </h2>
+			</h2>
+		</div>
+		<div class="col-12">
             @foreach ($themes as $theme)
 			<div class="row">               
                 <div class="col-4">
@@ -35,7 +44,7 @@
 			    </div>
 			</div>				
 			@endforeach
-		</section>
-	</div>
-</main>
+		</div>
+	</main>
+</section>
 @endsection

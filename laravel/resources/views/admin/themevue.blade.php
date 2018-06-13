@@ -1,14 +1,22 @@
 @extends('layouts.adminlayout')
 
-@section('title', "Page du theme")
+@section('title', "Administration du site")
 
 @section('contenu')
-<main class="container">
+{{--  header  --}}
+<header class="container">
 	<div class="row">
-		<section class="col-12">						
+		<div class="col-12">						
 			<h1>
 				Administration du site
-			</h1>
+            </h1>
+        </div>
+    </div>
+</header>
+{{--  contenu  --}}
+<section class="container pb-4">
+    <main class="row pt-3">
+        <div class="col-12">
 			{{-- message de validation --}}
 			@if(session('message'))
 			<div class="alert alert-success text-center">
@@ -20,6 +28,8 @@
 				Page du thème : {{$theme->nom_theme}}
             </h2>
             @endforeach
+        </div>
+        <div class="col-12">
 			<div class="row">
                 @foreach ($page as $pages)              
                 <div class="card w-50 mb-4">
@@ -41,7 +51,7 @@
                     Retour à la page des thèmes
                 </a>
             </div>		
-		</section>
-	</div>
-</main>
+        </div>
+    </main>
+</section>
 @endsection

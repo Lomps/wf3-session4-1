@@ -1,4 +1,6 @@
-/*css de la page principal*/
+/**************************/
+/*corp de toutes les pages*/
+/*************************/
 body
 {
 	margin:0;
@@ -10,15 +12,26 @@ body
 	text-align:left;
 	background-color:#957ECF
 }
-/*navbar*/
-.navbar-light .navbar-brand
-{
-    color: rgba(255, 255, 255, 0.9);
+
+/**********/
+/* navbar */
+/**********/
+.navbar-dark{
+	color: white !important;
 }
-.bgDark
+.bg-dark
 {
 	background-color: #372c6e !important;
 }
+
+/**********/
+/* acceuil*/
+/**********/
+h1.accueil{
+	font-size: 2rem;
+}
+
+
 /* couleur de fond sur la maquette */
 .bgWhite
 {
@@ -29,26 +42,22 @@ body
 {
 	border: 0.1em solid black;
 }
-/*lien dropdown dans la navbar */
-a.dropdown-item
-{
-	color: black !important;
-}
+
 /*couleur dans les footer des cartes*/
 div.card-footer
 {
 	color: #372c6e!important;
 }
 /*balise a*/
-a
+/* a
 {
 	color: rgba(255, 255, 255, 0.9)!important;	
-}
+} */
 /*titre h1 */
-h1
+/* h1
 {
 	font-size:1.2em;
-}
+} */
 /*titre h2*/
 h2
 {
@@ -208,12 +217,18 @@ h2
 {
 	margin-left:15em;
 }
-
-/*footer*/
-.ftr
-{
-	margin-top: 5px;	
+/**********/
+/* Footer */
+/**********/
+footer{
+	color: white;
+	padding: 5px;
+	position: relative;
+	bottom: 0;
+	right: 0;
+	width: 100%;
 	text-align: center;
-	padding-left: 4em;
-	margin-right: 4em;
+}
+.footer{
+	color: rgba(255, 255, 255, 0.75);
 }

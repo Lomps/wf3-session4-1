@@ -12,29 +12,20 @@
 */
 
 // route accueil
-Route::get('/', function (){
-	return view('welcome');
-});
+	Route::get('/', 'indexController@accueil')->name('accueil');
 // Route crédits
-Route::get('/credit', function(){
-	return view('credit');
-});
+	Route::get('/credit', 'indexController@credit')->name('credit');
 // Route mentions légales
-Route::get('/mentions-legales', function(){
-	return view('mentions-legales');
-});
+	Route::get('/mentions-legales', 'indexController@mentionslegales')->name('mentionslegales');
 // Route Contactez-nous
-Route::get('/contactez-nous', function(){
-	return view('contactez-nous');
-});
-// Route Utilisateur
+	Route::get('/contactez-nous', 'indexController@contacteznous')->name('contacteznous');
+
 // Route profil
-Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
+		Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 // Route affiche modif profil
 Route::get('/modifier-profil', 'usersController@profilaffichemaire')->middleware('auth')->name('modifprofil');
 // Route modif profil validation
 Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middleware('auth')->name('validemodifprofil');
-// Fin de route Utilisateur
 
 // Route Admin
 Route::prefix('admin')->group(function() {

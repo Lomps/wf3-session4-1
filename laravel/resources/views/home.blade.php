@@ -16,9 +16,9 @@
                     </div>
                 </div>
                 <div class="col-6 mt-4">
-                    <h2>
+                    <h1 class="accueil">
                         Bienvenue sur le site de communication de la communauté Auxerroise.
-                    </h2>
+                    </h1>
                     <p>
                         Vous êtes maire, adjoint ou secrétaire de mairie et souhaitez créer votre bulletin municipal?
                     </p>

@@ -1,5 +1,7 @@
 @extends('layouts.adminlayout')
+
 @section('title', "Administration du site")
+
 @section('contenu')
 <!-- Header -->
 <header class="container">
@@ -18,7 +20,9 @@
                 </div>
             @endif
         <div class="col-12">
-            <h2>Modification dun utilisateur</h2>
+            <h2>
+                Modification dun utilisateur
+            </h2>
         </div>
         <section class="col-12">
             {{--  formulaire  --}}
@@ -128,33 +132,33 @@
                 </div>
                 {{--  utilisateur actif  --}}
                 <div class="form-group row">
-                        <label for="activeuser" class="col-md-3 col-form-label text-md-right">
-                            Actif
-                        </label>
-                        <div class="col-md-8">
-                            <select id="activeuser" class="form-control{{ $errors->has('activeuser') ? ' is-invalid' : '' }}" name="activeuser" required>
-                                {{--  select activité  --}}
-                                <option value="">
-                                    -- Sélectionnez action --
-                                </option>
-                                {{--  inactif  --}}
-                                <option value="0"{{($user->activeuser == 0) ? ' selected' : ''}}>
-                                    inactif
-                                </opttion>
-                                {{--  actif  --}}
-                                <option value="1"{{($user->activeuser == 1) ? ' selected' : ''}}>
-                                    Actif
-                                </opttion>
-                            </select>
-                            @if ($errors->has('activeuser'))
-                                <span class="invalid-feedback">
-                                    <strong>
-                                        {{ $errors->first('activeuser') }}
-                                    </strong>
-                                </span>
-                            @endif
-                        </div>
+                    <label for="activeuser" class="col-md-3 col-form-label text-md-right">
+                        Actif
+                    </label>
+                    <div class="col-md-8">
+                        <select id="activeuser" class="form-control{{ $errors->has('activeuser') ? ' is-invalid' : '' }}" name="activeuser" required>
+                            {{--  select activité  --}}
+                            <option value="">
+                                -- Sélectionnez action --
+                            </option>
+                            {{--  inactif  --}}
+                            <option value="0"{{($user->activeuser == 0) ? ' selected' : ''}}>
+                                inactif
+                            </opttion>
+                            {{--  actif  --}}
+                            <option value="1"{{($user->activeuser == 1) ? ' selected' : ''}}>
+                                Actif
+                            </opttion>
+                        </select>
+                        @if ($errors->has('activeuser'))
+                            <span class="invalid-feedback">
+                                <strong>
+                                    {{ $errors->first('activeuser') }}
+                                </strong>
+                            </span>
+                        @endif
                     </div>
+                </div>
                 <div class="form-group row pb-3">
                     <div class="col-md-6 offset-md-3">
                         <button type="submit" class="btn btn-primary">
