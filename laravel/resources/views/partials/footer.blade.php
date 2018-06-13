@@ -1,8 +1,8 @@
 <div class="container-fluid">
-	<footer class="container">
+	<footer class="container footer">
 		<div class="row">
-			<div class="col-12 ">
-				<ul class="nav justify-content-center ftr">
+			<div class="col-12">
+				<ul class="nav justify-content-center">
 					<li class="nav-item">
 						<a class="nav-link active" href="{{URL::to('/')}}/credit">
 							Crédit

@@ -15,22 +15,25 @@
    <section class="container bgWhite mt-1">
    	<!-- Row1 -->
    	<div class="row text-center">
-			<!-- col-->    
-                      
-         <img src="{{asset('assets/img/maquette_p1.png') }}" alt="Maquette" usemap="#maquette" >
-         <map name="maquette">
-             @foreach ($zone as $art)
-            <area shape="{{$art->forme}}" coords="{{$art->coordonnees}}" href="#" data-toggle="modal" data-target="#mamodale" data-type="{{$art->type_donnee}}"" data-zone="{{$art->id_zone}}"/>                                    
-      @endforeach      
-      </map>
-      {{-- pagination --}}
-            <nav aria-label="Page navigation">
-                {{ $articles->links('vendor.pagination.bootstrap-4') }}
-            </nav> 
+			<!-- col-->                   
+        <img src="{{asset('assets/img') }}/{{$page['0']->images}}" alt="Maquette" usemap="#maquette" >
+        <map name="maquette">          
+        @foreach ($page as $pa) 
+          <area shape="{{$pa->forme}}" coords="{{$pa->coordonnees}}" href="#" data-toggle="modal" data-target="#mamodale" data-type="{{$pa->type_donnee}}"" data-zone="{{$pa->id_zone}}"/>
+        @endforeach 
+        </map>
+      </div>
 		<!-- ajout du bouton valider-->   			
       <div class="col text-center">
+        <form method="POST" action="{{route('ajoutarticle')}}" enctype="multipart/form-data">
+          {{ csrf_field() }}              
           <button type="submit" id="myForm" class="btn-primary btn">Valider</button>
-      </div>   
+            <p id="feedback"></p>        
+        </form>          
+      </div> 
+      <nav aria-label="Page navigation">        
+        {{ $page->links('vendor.pagination.bootstrap-4') }}                
+      </nav>   
    </section>
    <!-- /Container de la page-->
    </main>
@@ -61,11 +64,21 @@
 
    <script type="text/javascript">
       //quand tu clique tu fais une varaible qui recupere la valeur et tu fais .html(valeur)   
+      $(function()
+      {
+        $("#myForm").on('click', accepter);
       
+      });
+      function accepter(event){
+  event.preventDefault(); 
+  $("#myForm").hide();
+  $("#feedback").html("Validation réussie.");
+}
+       
       //boucle switch pour définir les conditions
       $('#mamodale').on('show.bs.modal', function(event)
       {
-         //déclarations des varaibles 
+         //déclarations des variables 
          var zone = $(event.relatedTarget).data('zone');  
          var type = $(event.relatedTarget).data('type');
          var image = $(this).attr('src');         
