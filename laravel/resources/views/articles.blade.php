@@ -18,7 +18,7 @@
 			<!-- col-->                   
         <img src="{{asset('assets/img') }}/{{$page['0']->images}}" alt="Maquette" usemap="#maquette" >
         <map name="maquette">          
-        @foreach ($page as $pa) 
+        @foreach ($zone as $pa) 
           <area shape="{{$pa->forme}}" coords="{{$pa->coordonnees}}" href="#" data-toggle="modal" data-target="#mamodale" data-type="{{$pa->type_donnee}}"" data-zone="{{$pa->id_zone}}"/>
         @endforeach 
         </map>

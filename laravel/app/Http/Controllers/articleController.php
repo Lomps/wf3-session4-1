@@ -9,17 +9,16 @@ use App\zoneModel as Zone;
 use App\pageModel as Page;
 
 class articleController extends Controller
+
 {
-   
-     public function articles()
-     {
-
-        $page = Page::get();
-        $page = Page::paginate(1);                 
-        return view('articles', ['page'=> $page]);
-	}
-
-// valide l'ajout d'un article
+    public function articles()
+    {
+        $page = Page::where('id_page', 1)->get();
+        $page = Page::paginate(1);
+        $articles = Articles::get();
+        $zone = Zone::orderBy('id_zone', 'asc')->get();
+        return view('articles', ['articles' => $articles,'zone'=> $zone, 'page'=> $page]);   
+    }
 
     public function ajoutarticle(Request $donnees) {
 		$validateData = $donnees->validate([
