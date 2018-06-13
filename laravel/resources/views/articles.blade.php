@@ -15,24 +15,20 @@
    <section class="container bgWhite mt-1">
    	<!-- Row1 -->
    	<div class="row text-center">
-			<!-- col-->
-          @foreach ($zone as $art)  
-			<div class="col bordure">   				
-            <p><map name="{{$art->zone_id_zone}}" id="{{$art->nom_de_la_zone}}">
-               <!--informations de votre map--> 
-               <!-- Boucle pour -->                            
-               <area shape="{{$art->forme}}" coords="{{$art->coordonnees}}" href="#" alt="titre"/>                      
-               <p>
-               <button data-toggle="modal" data-target="#mamodale" data-type="{{$art->type_donnee}}" data-zone="{{$art->id_zone}}" class="btn btn-primary">Editer</button>                   
-               </p>             
-               
-            </map></p>
-		    </div>
-          @endforeach
-      </div>
+			<!-- col-->    
+                      
+         <img src="{{asset('assets/img/maquette_p1.png') }}" alt="Maquette" usemap="#maquette" >
+         <map name="maquette">
+             @foreach ($zone as $art)
+            <area shape="{{$art->forme}}" coords="{{$art->coordonnees}}" href="#" data-toggle="modal" data-target="#mamodale" data-type="{{$art->type_donnee}}"" data-zone="{{$art->id_zone}}"/>                                    
+      @endforeach      
+      </map>
+      <nav aria-label>
+         {{asset('assets/img/') }}->links('vendor.pagination.bootstrap-4') }}
+      </nav>   
 		<!-- ajout du bouton valider-->   			
       <div class="col text-center">
-          <button type="submit" class="btn-primary btn">Valider</button>
+          <button type="submit" id="myForm" class="btn-primary btn">Valider</button>
       </div>   
    </section>
    <!-- /Container de la page-->
@@ -50,7 +46,7 @@
          <form method="POST" action="{{route('ajoutarticle')}}" enctype="multipart/form-data">          
           <input type="hidden" name="publication_id_publication" value="1">  
             {{ csrf_field() }}             
-          <div class="modal-body">
+          <div class="modal-body">              
             <p></p>
          </div>         
          <div class="modal-footer">           
@@ -63,12 +59,15 @@
    </div>
 
    <script type="text/javascript">
+      //quand tu clique tu fais une varaible qui recupere la valeur et tu fais .html(valeur)   
+      
       //boucle switch pour définir les conditions
       $('#mamodale').on('show.bs.modal', function(event)
       {
          //déclarations des varaibles 
-         var zone = $(event.relatedTarget).data('zone');   
+         var zone = $(event.relatedTarget).data('zone');  
          var type = $(event.relatedTarget).data('type');
+         var image = $(this).attr('src');         
          
          switch(type)
          {    
@@ -89,12 +88,9 @@
                $(this).html("Aucune des conditions n'est remplies");            
          }
       });
+// Cette fonction gère l'ajout du texte saisi par l'utilisateur 
+$('#confirm').on('click',ajoutarticle);
 
-   
-        // Cette fonction gère l'ajout du texte saisi par l'utilisateur
-
-
- $('#confirm').on('click',ajoutarticle);
 function ajoutarticle()
 {
 
@@ -118,7 +114,7 @@ function ajoutarticle()
      {
         console.log(error);
      });      
-
 }
    </script>
 @endsection
+
