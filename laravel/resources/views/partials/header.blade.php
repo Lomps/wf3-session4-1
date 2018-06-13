@@ -34,6 +34,9 @@
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
+					<li class="nav-item{{ (Route::currentRouteName() == 'listearticles') ? ' active': '' }}">
+			        	<a class="nav-link" href="{{route('articles')}}">Articles</a>
+			   		</li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
 					<!-- Authentication Links -->
