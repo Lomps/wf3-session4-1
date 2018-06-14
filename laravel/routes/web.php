@@ -19,13 +19,18 @@
 	Route::get('/mentions-legales', 'indexController@mentionslegales')->name('mentionslegales');
 // Route Contactez-nous
 	Route::get('/contactez-nous', 'indexController@contacteznous')->name('contacteznous');
-
+//  affiche la page connécté
+	Route::get('/accueil', 'HomeController@index')->middleware('auth')->name('home');
 // Route profil
-		Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
+	Route::get('/utilisateur', 'usersController@profil')->middleware('auth')->name('profil');
 // Route affiche modif profil
 Route::get('/modifier-profil', 'usersController@profilaffichemaire')->middleware('auth')->name('modifprofil');
 // Route modif profil validation
 Route::post('/validemodifprofil', 'usersController@validemodifprofil')->middleware('auth')->name('validemodifprofil');
+// Route affichage theme
+Route::get('affiche-theme', 'indexController@affichetheme')->middleware('auth')->name('affichetheme');
+// Route affiche vue du theme
+Route::get('vue-theme/{id}', 'indexController@affichevue')->middleware('auth')->name('affichevue');
 
 // Route Admin
 Route::prefix('admin')->group(function() {
@@ -64,6 +69,11 @@ Route::prefix('admin')->group(function() {
 // Afficger les coordonées
 	Route::get('/theme-coordonées/{id}', 'adminController@themecoord')->middleware('auth')->name('themecoord');
 // Modif coordonées
+
+//  Affiche la page ajout theme
+	//Route::get('/ajout-theme', 'adminControllerajoutheme')->middleware('auth')->name('ajoutheme');
+// valide l'ajout de thème
+
 });
 // fin de route admin
 
@@ -72,6 +82,8 @@ Route::prefix('admin')->group(function() {
 	Route::post('/ajoutarticle', 'articleController@ajoutarticle')->middleware('auth')->name('ajoutarticle');
 
 Auth::routes();
-
+//  affiche la page connécté
+Route::get('/accueil', 'HomeController@index')->name('home');
 Route::get('/register', 'afficheinscmairieController@affichemaire')->name('register');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser'); 
+

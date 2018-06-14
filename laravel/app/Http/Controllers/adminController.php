@@ -10,6 +10,7 @@ use App\nbr_utilisateurs_mairieModel as Num;
 use App\User as User;
 use App\themeModel as Theme;
 use App\pageModel as Pages;
+use App\zonethemeModel as ZoneTheme;
 
 class adminController extends Controller
 {
@@ -236,13 +237,14 @@ class adminController extends Controller
 
 
 	// affiche la page des coordonées du theme
-	// public function themecoord($id){
-	// 	if(Auth::User()->role ==4){
-	// 		$zone = Zones::where('id_zone', $id)->get();
-	// 		return view('admin.themecoord', ['zones' => $zone]);
-	// 	}else{
-	// 		return abort('404');
-	// 	}
-	// }
+	public function themecoord($id){
+		if(Auth::User()->role ==4){
+			$zone = ZoneTheme::get();
+			$zone = ZoneTheme::paginate(5);
+			return view('admin.themecoord', ['zones' => $zone]);
+		}else{
+			return abort('404');
+		}
+	}
 
 }

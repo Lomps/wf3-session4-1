@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 
-@section('title', "Administration du site")
+@section('title', "Page du thème")
 
 @section('contenu')
 {{--  header  --}}
@@ -8,7 +8,7 @@
 	<div class="row">
 		<div class="col-12">						
 			<h1>
-				Administration du site
+				Vue des page du thème
             </h1>
         </div>
     </div>
@@ -17,12 +17,6 @@
 <section class="container pb-4">
     <main class="row pt-3">
         <div class="col-12">
-			{{-- message de validation --}}
-			@if(session('message'))
-			<div class="alert alert-success text-center">
-				{{ session('message') }}
-			</div>
-            @endif
             @foreach ($themes as $theme)            		
 			<h2>
 				Page du thème : {{$theme->nom_theme}}
@@ -38,7 +32,7 @@
                 @endforeach
             </div>
             <div class="col-12 mb-4">
-                <a class="btn btn-secondary" href="{{ route('theme') }}" role="button">
+                <a class="btn btn-secondary" href="{{ route('affichetheme') }}" role="button">
                     Retour à la page des thèmes
                 </a>
             </div>		

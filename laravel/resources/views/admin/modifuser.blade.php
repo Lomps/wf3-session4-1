@@ -110,13 +110,13 @@
                             <option value="">
                                 -- Sélectionner un rôle --
                             </option>
-                            {{--  banni ou inactif  --}}
+                            {{--  banni  --}}
                             <option value="0"{{($user->role == 0) ? ' selected' : ''}}>
-                                Banni ou inactif
+                                Banni
                             </opttion>
-                            {{--  inscrit et actif  --}}
+                            {{--  inscrit  --}}
                             <option value="1"{{($user->role == 1) ? ' selected' : ''}}>
-                                Inscrit et actif
+                                Inscrit
                             </opttion>
                             {{--  administrateur  --}}
                             <option value="4"{{($user->role == 4) ? ' selected' : ''}}>

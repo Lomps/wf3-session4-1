@@ -1,6 +1,6 @@
 @extends('layouts.mainlayout')
 
-@section('title')
+@section('title', "Crédits")
 
 @section('contenu')
 <main class="container-fluid mt-5 mb-5">
