@@ -17,6 +17,13 @@ class articleController extends Controller
         return view('articles', ['page'=> $page]);   
     }
 
+    public function maquette()
+    {
+        $maquette = Articles::get();
+        return view('maquette', ['maquette' => $maquette ]);
+    }
+
+
     public function ajoutarticle(Request $donnees) {
 		$validateData = $donnees->validate([
 			'contenu' => 'required',
