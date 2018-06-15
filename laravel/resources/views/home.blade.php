@@ -1,6 +1,6 @@
 @extends('layouts.mainlayout')
 
-@section('title')
+@section('title', "Accueil")
 
 @section('contenu')
 <main>
@@ -16,18 +16,11 @@
                     </div>
                 </div>
                 <div class="col-6 mt-4">
-                    <h2>
-                        Bienvenue sur le site de communication de la communauté Auxerroise.
-                    </h2>
-                    <p>
-                        Vous êtes maire, adjoint ou secrétaire de mairie et souhaitez créer votre bulletin municipal?
-                    </p>
-                    <p>
-                        Ce site vous le permet, une inscription et vous pourrez commencer à inscrire vos premiers articles.
-                    </p>
-                    <p>
-                        Une fois votre journal validé complètement, celui-ci sera converti au format PDF afin d'envoyer votre journal en impression.
-                    </p>
+                    <h1>
+                        Accueil
+                    </h1>
+                    <p>Bonjour {{ Auth::user()->name }} {{ Auth::user()->firstname }} !</p>
+                    <p>Choisissez votre thème et cliquez sur la zone de texte pour commencer à créer votre journal.</p>
                 </div>
             </div>
         </div>

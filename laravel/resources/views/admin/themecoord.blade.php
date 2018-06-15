@@ -24,34 +24,34 @@
 			</div>
 			@endif		
 			<h2>
-				Administration des mairies
+				Coordonnées du thème
 			</h2>
 		</div>
 		<div class="col-12">
 			<div class="row">
-				<div class="col-3">
+				<div class="col-2 text-center">
 					<strong>
-						Mairie
+						Nom de la zone
 					</strong>
 				</div>
-				<div class="col-2">
+				<div class="col-5 text-center">
 					<strong>
-						Adresse
+						Coordonnées
 					</strong>
 				</div>
-				<div class="col-1">
+				<div class="col-1 text-center">
 					<strong>
-						Code postal
+						Forme
 					</strong>
 				</div>				
-				<div class="col-3">
+				<div class="col-1 text-center">
 					<strong>
-						Ville
+						Type de données
 					</strong>
 				</div>
-				<div class="col-1 text-left">
+				<div class="col-1 text-center">
 					<strong>
-						Utilisateur
+						N° de la page
 					</strong>
 				</div>
 				<div class="col-2 text-center">
@@ -61,54 +61,75 @@
 				</div>
 				<hr class="col-12">
 			</div>				
-			@foreach($listemairie as $mairie)
+			@foreach($zones as $zone)
 			<div class="row py-1">
-				{{-- Nom de la mairie --}}
-				<div class="col-3">
-					{{ $mairie->mairie }}
+				{{-- Nom d la zone --}}
+				<div class="col-2 text-center">
+					{{ $zone->nom_de_la_zone }}
 				</div>
-				{{-- adresse --}}
-				<div class="col-2">
-					{{ $mairie->adresse }}
+				{{-- coordonnée --}}
+				<div class="col-5 text-center">
+					{{ $zone->coordonnees }}
 				</div>
-				{{-- code postal --}}
-				<div class="col-1">
-					{{ $mairie->code_postal }}
+				{{-- forme --}}
+				<div class="col-1 text-center">
+					{{ $zone->forme }}
 				</div>
-				{{-- ville --}}
-				<div class="col-3">
-					{{ $mairie->ville }}
+				{{-- type --}}
+				<div class="col-1 text-center type">
+                    @php	
+                        switch( $zone->type_donnee ){    
+                            // titre    
+                            case 1:
+                                echo "titre";
+                            break;
+                            // texte
+                            case 2:
+                                echo "texte";
+                            break;
+                            //image
+                            case 3:
+                                echo "image"; 
+                            break;                          
+                        }
+                    @endphp	
 				</div>
-				{{-- utilisateur --}}
-				<div class="col-1 text-left">
-					{{ $mairie->nbre  }}
+				{{-- N° page --}}
+				<div class="col-1 text-center">
+					{{ $zone->numero_page  }}
 				</div>
 				{{--  action  --}}
 				<div class="col-2 text-center">
 					{{--  modification  --}}
-					<a class="btn btn-warning btn-sm" href="{{ URL::to('/')}}/admin/modification-mairie/{{$mairie->id_mairie}}">
+					{{--  <a class="btn btn-warning btn-sm" href="#">
 						Modifier
-					</a>
+					</a>  --}}
 					{{--  suppression  --}}
-					@if($mairie->nbre == 0)
-						<a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="{{$mairie->id_mairie}}">
-							Supprimer
-						</a>
-					@endif
-						
+					{{--  <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#confirmModale" data-id="">
+						Supprimer
+					</a>  --}}
 				</div>
 			</div>
-			<hr class="col-12">
+            <hr class="col-12">
+            {{-- @endif --}}
 			@endforeach
 			{{-- pagination --}}
 			<nav aria-label="Page navigation">
-				{{ $listemairie->links('vendor.pagination.bootstrap-4') }}
+				{{ $zones->links('vendor.pagination.bootstrap-4') }}
 			</nav>
+			{{--  ajouter une zone  --}}
+			{{--  <a class="btn btn-primary btn-sm" href="#">
+				Ajouter une coordonnée
+			</a>  --}}
+			{{--  retour page theme  --}}
+			<a class="btn btn-secondary btn-sm" href="{{URL::to('/')}}/admin/theme">
+				Retour a la page des thèmes
+			</a>
 		</div>
 	</main>
 </section>
 {{--  modal  --}}
-<div class="modal" tabindex="-1" id="confirmModale" role="dialog">
+{{-- <div class="modal" tabindex="-1" id="confirmModale" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -141,5 +162,5 @@
 		$(this).find('.modal-body p').html("Voulez-vous vraiment supprimer cet utilisateur ?");
 		$("#confirm").attr("href", "{{URL::to('/')}}/admin/mairiesupprime/"+id);
 	});
-</script>  
+</script>   --}}
 @endsection

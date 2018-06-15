@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/styles.min.css') }}">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbardark  bgDark">
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-dark">
 		<section class="container">
 			{{-- lien sur logo --}}
 			<a class="navbar-brand" href="{{ URL::to('/') }}">
@@ -27,6 +27,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
+					@guest
 					{{-- lien Accueil --}}
 					<li class="nav-item{{ (Route::currentRouteName() == 'accueil') ? ' active': '' }}">
 						<a class="nav-link" href="{{URL::to('/')}}">
@@ -34,6 +35,27 @@
 							<span class="sr-only">(current)</span>
 						</a>
 					</li>
+					@else
+					
+					<li class="nav-item{{ (Route::currentRouteName() == 'home') ? ' active': '' }}">
+						<a class="nav-link" href="{{URL::to('/accueil')}}">
+							{{ __('Home')}}
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					
+					@endguest
+					@if(isset(Auth::user()->role) && Auth::user()->role>0)
+					<li class="nav-item{{ (Route::currentRouteName() == 'article') ? ' active': '' }}">
+						<a class="nav-link" href="{{URL::to('/')}}">
+							{{ __('Posts current')}}
+						</a>
+					</li>
+					<li class="nav-item{{ (Route::currentRouteName() == 'affichetheme') ? ' active': '' }}">
+						<a class="nav-link" href="{{URL::to('/affiche-theme')}}">
+							{{ __('Create posts')}}
+						</a>
+					@endif
 				</ul>
 				<ul class="navbar-nav ml-auto">
 					<!-- Authentication Links -->
@@ -65,7 +87,6 @@
 							{{ Auth::user()->name }} 
 							<span class="caret"></span>
 						</a>
-
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							{{-- lien profil --}}
 							<a class="dropdown-item" href="{{ route('profil') }}">

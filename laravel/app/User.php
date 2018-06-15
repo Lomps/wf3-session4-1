@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // veffifUser
+    public function verifUser (){
+        return $this->hasOne('App\VeriffyUser');
+    }
 }
